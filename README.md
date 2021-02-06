@@ -24,7 +24,7 @@ This is a GeneratePress Child theme built for ***cresthomes (uganda)*** based on
 
 This theme is adapted and customized for ***cresthomes (uganda)***.
 
-And to further adapt this theme, keep updating the `style.css` file.
+And to further adapt this theme, keep updating the `css/style.css` file.
 
 
 ## Copyright ##

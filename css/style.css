@@ -1,0 +1,272 @@
+/*
+Theme Name: GeneratePress Child
+Theme URI: https://generatepress.com
+Description: A custom theme for based on GeneratePress for Crest Homes (Uganda)
+Author: Martin Matovu
+Author URI: https://github.com/Mwamitovi
+Template: generatepress
+Version: 1.0.0
+Requires at least: 4.5.0
+Tested up to: 5.5
+Requires PHP: 5.4.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: generatepress-child
+Tags: two-columns, three-columns, one-column, right-sidebar, left-sidebar, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, rtl-language-support, featured-images, theme-options
+
+GeneratePress is based on Underscores http://underscores.me/, (C) 2012-2020 Automattic, Inc.
+
+*/
+
+/* global */
+
+h4 {
+	font-size: 32px;
+	font-weight: 400;
+}
+
+h5 {
+	font-size: 26px;
+	font-weight: 300;
+}
+
+/* header */
+
+.site-header.element-is-sticky {
+	width: 1441px !important;
+}
+
+.site-header .inside-header {
+	display: flex;
+	align-items: center;
+	padding: 22.5px 60px;
+	margin-bottom: -140px;
+}
+
+.inside-header .site-logo {
+	flex: 1;
+    z-index: 11;
+}
+
+.inside-header .main-navigation {
+	flex: 2;
+	background-color: transparent;
+}
+
+.inside-header .main-navigation .inside-navigation {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.inside-header .main-navigation li:not(:last-child) {
+	margin-right: 36.5px;
+}
+
+.inside-header .main-navigation a {
+	font-size: 25px;
+	font-weight: 600;
+}
+
+.inside-header .main-navigation .main-nav ul li a, .menu-toggle {
+	color: #4C1031;
+}
+
+.inside-header .main-navigation .main-nav ul li > a {
+	border-top: 12px solid transparent;
+}
+
+.inside-header .main-navigation .main-nav ul li > a:hover,
+.inside-header .main-navigation .main-nav ul li > a:focus,
+.inside-header .main-navigation .main-nav ul li > a:active {
+	color: #4C1031;
+	border-top: 12px solid #EE615E;
+	background-color: transparent;
+}
+
+.inside-header .main-navigation .main-nav ul li[class*="current-menu-"] > a:hover,
+.inside-header .main-navigation .main-nav ul li[class*="current-menu-"] > a:focus,
+.inside-header .main-navigation .main-nav ul li[class*="current-menu-"] > a:active,
+.inside-header .main-navigation .main-nav ul li[class*="current-menu-"] > a {
+	color: #4C1031;
+	border-top: 12px solid #EE615E;
+	background-color: transparent;
+}
+
+/* main section (page) */
+
+#page {
+	margin-bottom: -62.5px;
+}
+
+/* about us */
+
+.about-us--section .n2-ss-slider .n2-ss-layers-container {
+	margin-left: 0px !important; 
+}
+
+.about-us--section .section-title,
+.our-homes--section .ch-gallery-title {
+	writing-mode: tb;
+	-webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/* contact us / booking (form) */
+
+.nf-form-cont {
+	margin-left: 50px;
+}
+
+.our-homes-text {
+	margin-left: 2.5px;
+	font-size: 21.5px;
+}
+
+.our-homes--section .booking-form-body form .nf-before-form-content {
+	display: none;
+}
+
+.our-homes--section .booking-form-body form .booking-form-intro,
+.our-homes--section .booking-form-body form .booking-form-intro .nf-field .nf-field-element p {
+	margin-bottom: 0px;
+}
+
+.contact-us--section .nf-form-cont .nf-form-fields-required {
+	text-align: right;
+	margin-bottom: 35px;
+	font-size: 14.5px;
+}
+
+.nf-form-cont .nf-form-content .nf-field .nf-field-label {
+	display: none;
+}
+
+.our-homes--section,
+.contact-us--section {
+	background: #ee615e1f;
+}
+
+.contact-us--section .nf-form-content .listselect-wrap .nf-field-element div,
+.our-homes--section .nf-form-content .listselect-wrap .nf-field-element div,
+.contact-us--section .nf-form-content .ninja-forms-field,
+.our-homes--section .nf-form-content .ninja-forms-field {
+	font-size: 22.5px;
+}
+
+.contact-us--section .nf-form-content .list-select-wrap .nf-field-element > div, 
+.our-homes--section .nf-form-content .list-select-wrap .nf-field-element > div, 
+.contact-us--section .nf-form-content input:not([type=button]), 
+.our-homes--section .nf-form-content input:not([type=button]), 
+.contact-us--section .nf-form-content textarea,
+.our-homes--section .nf-form-content textarea {
+	background: transparent;
+	border: none;
+	color: #4C1031FF;
+	border-bottom: 1px solid #4C1031FF;
+}
+
+.contact-us--section .nf-form-content .list-select-wrap .nf-field-element > div:focus, 
+.our-homes--section .nf-form-content .list-select-wrap .nf-field-element > div:focus, 
+.contact-us--section .nf-form-content input:not([type=button]):focus, 
+.our-homes--section .nf-form-content input:not([type=button]):focus, 
+.contact-us--section .nf-form-content textarea:focus,
+.our-homes--section .nf-form-content textarea:focus {
+	background: transparent;
+}
+
+.contact-us--section .nf-form-content textarea.ninja-forms-field {
+	height: 50px;
+}
+
+.our-homes--section .nf-form-content textarea.ninja-forms-field {
+	height: 50px;
+}
+
+.contact-us--section .nf-form-content nf-field:not(:first-child) > .nf-field-container {
+	margin-top: 60px;
+}
+
+.our-homes--section .nf-form-content nf-field:first-child > .nf-field-container {
+	margin-top: 0px;
+}
+
+.our-homes--section .nf-form-content nf-field:not(:first-child) > .nf-field-container {
+	margin-top: 12px;
+}
+
+.our-homes--section .nf-form-content nf-field:nth-child(2) > .nf-field-container,
+.our-homes--section .nf-form-content nf-field:nth-child(3) > .nf-field-container {
+	margin-top: 35px;
+}
+
+.our-homes--section .nf-form-content .listselect-wrap .nf-field-element div,
+.our-homes--section .nf-form-content input.ninja-forms-field, 
+.our-homes--section .nf-form-content select.ninja-forms-field:not([multiple]) {
+	height: 53.5px;
+}
+
+.contact-us--section .nf-form-content button, 
+.our-homes--section .nf-form-content button, 
+.contact-us--section .nf-form-content input[type=button], 
+.our-homes--section .nf-form-content input[type=button], 
+.contact-us--section .nf-form-content input[type=submit],
+.our-homes--section .nf-form-content input[type=submit] {
+	background: #4C1031FF;
+	padding: 8px 32px 12px;
+	border-radius: 28px;
+}
+
+.our-homes--section .nf-form-content button, 
+.our-homes--section .nf-form-content input[type=button], 
+.our-homes--section .nf-form-content input[type=submit] {
+	margin-top: 27px;
+}
+
+.contact-us--section .nf-form-content button:hover, 
+.contact-us--section .nf-form-content button:focus, 
+.contact-us--section .nf-form-content button:active, 
+.contact-us--section .nf-form-content input[type=button]:hover, 
+.contact-us--section .nf-form-content input[type=button]:focus, 
+.contact-us--section .nf-form-content input[type=button]:active, 
+.contact-us--section .nf-form-content input[type=submit]:hover,
+.contact-us--section .nf-form-content input[type=submit]:focus,
+.contact-us--section .nf-form-content input[type=submit]:active,
+.our-homes--section .nf-form-content button:hover, 
+.our-homes--section .nf-form-content button:focus, 
+.our-homes--section .nf-form-content button:active, 
+.our-homes--section .nf-form-content input[type=button]:hover, 
+.our-homes--section .nf-form-content input[type=button]:focus, 
+.our-homes--section .nf-form-content input[type=button]:active, 
+.our-homes--section .nf-form-content input[type=submit]:hover,
+.our-homes--section .nf-form-content input[type=submit]:focus,
+.our-homes--section .nf-form-content input[type=submit]:active {
+	background: #EE615EFF;
+	color: #FFFFFF;
+}
+
+.contact-us--section .nf-form-content .nf-after-field .nf-error .nf-error-msg,
+.our-homes--section .nf-form-content .nf-after-field .nf-error .nf-error-msg {
+	margin-bottom: -32px;
+}
+
+.contact-us--section .nf-after-form-content .nf-form-errors .nf-error-msg,
+.our-homes--section .nf-after-form-content .nf-form-errors .nf-error-msg {
+	margin-left: 6px;
+	margin-top: -18px;
+}
+
+#phone-number .gb-icon svg {
+	transform: scaleX(-1);
+}
+
+/* footer */
+
+.site-footer .site-info {
+	color: #4C1031;
+	font-weight: 500;
+	background-color: transparent;
+  display: none;
+}

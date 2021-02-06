@@ -1,0 +1,7 @@
+.idea/
+log/
+vendor/
+.DS_Store
+.project
+*.log
+*.map

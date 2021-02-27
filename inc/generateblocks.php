@@ -62,7 +62,7 @@ add_filter( 'generateblocks_defaults', function( $defaults ) {
     $defaults['button']['fontFamily'] = $buttons_family;
     $defaults['button']['fontSize'] = $buttons_font_size;
     $defaults['button']['fontSizeUnit'] = 'px';
-    $defaults['button']['fontWeight'] = esc_attr( $gpc_theme_settings['buttons_font_weight'] );
+    $defaults['button']['fontWeight'] = array_key_exists ('buttons_font_weight', $gpc_theme_settings) ? esc_attr( $gpc_theme_settings['buttons_font_weight'] ) : '';
 
     return $defaults;
 } );

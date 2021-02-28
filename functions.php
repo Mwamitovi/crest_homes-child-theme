@@ -11,6 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 define( 'GPC_VERSION', '1.0.0' );
 
+
 /**
  * Load jQuery
  */
@@ -18,6 +19,7 @@ add_action( 'wp_footer', 'gpc_load_jquery' );
 function gpc_load_jquery() {
  	wp_enqueue_script( 'jquery' );
 }
+
 
 /**
  * Enqueue scripts and styles.
@@ -37,6 +39,7 @@ function gpc_scripts() {
  	wp_enqueue_script('gpc-scripts', get_stylesheet_directory_uri() . '/js/base.js', array('jquery'), GPC_VERSION, true );
 }
 
+
 /**
  * Enqueue admin scripts and styles.
  */
@@ -44,6 +47,7 @@ add_action( 'admin_enqueue_scripts', 'gpc_admin_scripts' );
 function gpc_admin_scripts() {
     wp_enqueue_style( 'gpc-editor', get_stylesheet_directory_uri() . '/admin/css/editor.css', false, GPC_VERSION, 'all');
 }
+
 
 /**
  * Add body classes.
@@ -53,6 +57,7 @@ function gpc_body_classes( $classes ) {
     $classes[] = 'gpc';
     return $classes;
 }
+
 
 /**
  * Add .has-js class to html element.
@@ -64,6 +69,21 @@ function gpc_add_js_class() { ?>
         htmlEl.classList.add('has-js');
     </script>
 <?php }
+
+
+/**
+ * Update footer message
+ */
+add_filter( 'generate_copyright','gpc_ch_footer' );
+function gpc_ch_footer() {
+	$copyright = sprintf(
+		'<span class="copyright">&copy; %1$s &bull; %2$s</span>',
+		date( 'Y' ), // phpcs:ignore
+		get_bloginfo( 'name' )
+	);
+
+	echo $copyright;
+}
 
 /**
  * Include other functions as needed from the `inc` folder.

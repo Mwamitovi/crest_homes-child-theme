@@ -10,7 +10,7 @@
 
 ## Description ## 
 
-This is a GeneratePress Child theme built for ***cresthomes (uganda)*** based on [GeneratePress](https://generatepress.com/) theme - a lightweight WordPress theme built with a focus on speed and usability.
+This is a GeneratePress Child theme built for ***crest-homes*** based on [GeneratePress](https://generatepress.com/) theme - a lightweight WordPress theme built with a focus on speed and usability.
 
 
 ## Installation ##
@@ -20,11 +20,17 @@ This is a GeneratePress Child theme built for ***cresthomes (uganda)*** based on
 3. Click on the `Activate` button to use the theme right away.
 4. Navigate to `Pages` > `Add New` and start using `GenerateBlocks` to build your site. 
 
+
 ## Customizations ##
 
-This theme is adapted and customized for ***cresthomes (uganda)***.
+This theme is adapted and customized for ***crest-homes***.
 
 And to further adapt this theme, keep updating the `css/style.css` file.
+
+
+## Credits ##
+
+* The boilerplate code is adapted from [GP Developer Theme Child](addisonhall/generatepress-child) by [Addison Hall](https://addisonhalldesign.com)
 
 
 ## Copyright ##

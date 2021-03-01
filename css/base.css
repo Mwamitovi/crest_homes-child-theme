@@ -418,26 +418,26 @@ input[type="submit"],
 /* Basscss Hide */
 
 .hide{
-    position:absolute !important;
-    height:1px;
-    width:1px;
-    overflow:hidden;
-    clip:rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
 }
 
 @media (max-width: 767px){
-    .mobile-hide { display:none !important }
+    .mobile-hide { display: none !important }
 }
 
 @media (min-width: 768px) and (max-width: 1024px){
-    .tablet-hide { display:none !important }
+    .tablet-hide { display: none !important }
 }
 
 @media (min-width: 1025px){
-    .desktop-hide { display:none !important }
+    .desktop-hide { display: none !important }
 }
 
-.display-none{ display:none !important }
+.display-none{ display: none !important }
 
 /* Basscss Responsive Margin */
 

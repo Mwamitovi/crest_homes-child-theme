@@ -39,10 +39,6 @@ h5 {
 /* Header & Nav
    ========================================================================== */
 
-.site-header.element-is-sticky {
-	width: 1441px !important;
-}
-
 .site-header .inside-header {
 	display: flex;
 	align-items: center;
@@ -56,8 +52,15 @@ h5 {
 .site-header .inside-header.scroll {
     background-color: #ffffff;
     padding: 8.5px 60px;
+    margin-top: -1.99px;
     transition: 0.3s ease-in-out;
   	box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);      
+}
+
+@media screen and (max-width: 1024px) {
+	.site-header .inside-header {
+		padding: 22.5px 36px;
+	}
 }
 
 .inside-header .site-logo {
@@ -128,10 +131,13 @@ h5 {
 	background-color: transparent;
 }
 
+#rmp_menu_trigger-617.scroll {
+	top: 4px;
+}
+
 @media screen and (max-width: 1024px) {
 
-	.site-header .main-navigation,
-	.site-header .inside-header .site-navigation {
+	.site-header .main-navigation {
 		display: none;
 	}
 

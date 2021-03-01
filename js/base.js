@@ -17,6 +17,11 @@ jQuery(document).ready(function( $ ){
         const socialIcons = `
             .ch-social-icons
         `;
+
+        // define mobile-menu element
+        const menuIcon = `
+            #rmp_menu_trigger-617
+        `;
           
     	if ($( this ).scrollTop() > 100) {
           
@@ -25,12 +30,17 @@ jQuery(document).ready(function( $ ){
         
             // handle icons to disappear onScroll
         	$(socialIcons).addClass('scroll');
+
+            // handle menu-icon to move onScroll
+            $(menuIcon).addClass('scroll');
               
         } else {
 
       		$(header).removeClass('scroll');
 
             $(socialIcons).removeClass('scroll');
+            
+            $(menuIcon).removeClass('scroll');
         };
 
         // Define <li> element and remove class

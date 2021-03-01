@@ -37,6 +37,8 @@ function gpc_scripts() {
 	wp_enqueue_style('cresth-style', get_stylesheet_directory_uri() . '/css/style.css', false, GPC_VERSION, 'all');
  
  	wp_enqueue_script('gpc-scripts', get_stylesheet_directory_uri() . '/js/base.js', array('jquery'), GPC_VERSION, true );
+
+ 	wp_enqueue_script('cresth-responsive', get_stylesheet_directory_uri() . '/js/responsive.js', array('jquery'), GPC_VERSION, true );
 }
 
 

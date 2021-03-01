@@ -34,7 +34,7 @@ function gpc_scripts() {
 
 	wp_enqueue_style('gpc-base', get_stylesheet_directory_uri() . '/css/base.css', false, GPC_VERSION, 'all');
 
-	wp_enqueue_style('ch-style', get_stylesheet_directory_uri() . '/css/style.css', false, GPC_VERSION, 'all');
+	wp_enqueue_style('cresth-style', get_stylesheet_directory_uri() . '/css/style.css', false, GPC_VERSION, 'all');
  
  	wp_enqueue_script('gpc-scripts', get_stylesheet_directory_uri() . '/js/base.js', array('jquery'), GPC_VERSION, true );
 }
@@ -74,8 +74,8 @@ function gpc_add_js_class() { ?>
 /**
  * Update footer message
  */
-add_filter( 'generate_copyright','gpc_ch_footer' );
-function gpc_ch_footer() {
+add_filter( 'generate_copyright','gpc_cresth_footer' );
+function gpc_cresth_footer() {
 	$copyright = sprintf(
 		'<span class="copyright">&copy; %1$s &bull; %2$s</span>',
 		date( 'Y' ), // phpcs:ignore

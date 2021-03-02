@@ -359,6 +359,18 @@ h5 {
 /* Widgets
    ========================================================================== */
 
+/* main slider */
+
+@media screen and (max-width: 1024px) {
+	.n2-ss-slider .n2-ss-layer[data-sstype=col] {
+		width: 40px !important;
+	}	
+
+	.n2-ss-button-container > a {
+		padding: 9px 30px !important;
+		margin-top: 7.5px !important;
+	}
+}
 
 
 /* Footer

@@ -232,7 +232,23 @@ h5 {
 /* Contact Us
    ========================================================================== */
 
+@media screen and (max-width: 1024px) {
+	.contact-us--section h1.gb-headline {
+		font-size: 60px;
+	}	
 
+	.contact-us--section h3.gb-headline {
+		font-size: 20px;
+	}
+
+	.contact-us--section .contact--details > .gb-inside-container {
+		padding-right: 0; 
+	}
+
+	.contact-us--section .contact--details .phone-contact > .gb-inside-container {
+		padding-left: 0; 
+	}
+}
 
 
 /* Widgets

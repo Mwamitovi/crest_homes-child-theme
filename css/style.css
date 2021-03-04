@@ -9,8 +9,9 @@
  * 4. Our Homes
  * 5. Contact Us
  * 6. Widgets
- * 7. Footer
- * 8. Other
+ * 7. Woocommerce
+ * 8. Footer
+ * 9. Other
  *
  */
 
@@ -497,6 +498,15 @@ h5 {
 }
 
 
+/* Woocommerce
+   ========================================================================== */
+
+.product .breadcrumbs > a:nth-child(3),
+.product .breadcrumbs > span:nth-child(4) {
+	display: none;
+}
+
+
 /* Footer
    ========================================================================== */
 
@@ -515,6 +525,6 @@ h5 {
 }
 
 .one-container .site-content {
-	padding-top: 140px !important;
+	padding-top: 195px !important;
 }
 

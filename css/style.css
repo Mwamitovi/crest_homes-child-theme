@@ -217,6 +217,17 @@ h5 {
 /* Our Homes
    ========================================================================== */
 
+.our-homes--section .woocommerce .woocommerce-result-count,
+.our-homes--section .woocommerce .woocommerce-ordering {
+	display: none;
+}
+
+.our-homes--section .woocommerce ul.products li.product .woocommerce-loop-category__title, 
+.our-homes--section .woocommerce ul.products li.product .woocommerce-loop-product__title, 
+.our-homes--section .woocommerce ul.products li.product h3 {
+	font-size: 1.425rem;
+}
+
 @media screen and (max-width: 1024px) {
 	.our-homes--section h2.gb-headline {
 		font-size: 60px;
@@ -225,6 +236,16 @@ h5 {
 
 	ul.cta-message {
 		margin: 0 0 1.5em 1.08em;
+	}
+
+	.our-homes--section .woocommerce .products ul, 
+	.our-homes--section .woocommerce ul.products {
+		margin: 0 0 1em 1.85em;
+	}
+
+	.our-homes--section .woocommerce ul.products li.product, 
+	.our-homes--section .woocommerce-page ul.products li.product {
+		margin: 0 2% 2.992em 0;
 	}
 }
 

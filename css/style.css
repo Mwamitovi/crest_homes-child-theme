@@ -228,6 +228,10 @@ h5 {
 	font-size: 1.425rem;
 }
 
+.our-homes--section .woocommerce ul.products li.product a img {
+	height: fit-content;
+}
+
 @media screen and (max-width: 1024px) {
 	.our-homes--section h2.gb-headline {
 		font-size: 60px;
@@ -246,6 +250,10 @@ h5 {
 	.our-homes--section .woocommerce ul.products li.product, 
 	.our-homes--section .woocommerce-page ul.products li.product {
 		margin: 0 2% 2.992em 0;
+	}
+
+	.our-homes--section .woocommerce ul.products li.product a img {
+		height: unset;
 	}
 }
 

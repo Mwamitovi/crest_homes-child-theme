@@ -50,8 +50,9 @@ jQuery(document).ready(function( $ ){
 
         // returns nth <li> element and adds class
         function addClassToItem(child) {
+            // restricted to home page
             return $(`
-                .inside-header .main-navigation .main-nav ul li:nth-child(${child})
+                .home .inside-header .main-navigation .main-nav ul li:nth-child(${child})
             `).addClass("current-menu-item");
         };
       
@@ -74,10 +75,16 @@ jQuery(document).ready(function( $ ){
         } else {
 
             removeClassFromList;        
-            $('.inside-header .main-navigation .main-nav ul li:first-child')
+            $('.home .inside-header .main-navigation .main-nav ul li:first-child')
              .addClass("current-menu-item");
     	};
       
     });
+
+    /**
+     * Highlight "Our Homes" on product pages
+     */
+    $('.woocommerce .inside-header .main-navigation .main-nav ul li:nth-child(3)')
+         .addClass("current-menu-item");
   
 });

@@ -51,7 +51,7 @@ jQuery(document).ready(function( $ ){
         // returns nth <li> element and adds class (only homepage)
         function addClassToItem(child) {
             return $(`
-                .home .inside-header .main-navigation .main-nav ul li:nth-child(${child})
+                .home .inside-header .main-navigation .main-nav>ul>li:nth-child(${child})
             `).addClass("current-menu-item");
         };
       
@@ -74,7 +74,7 @@ jQuery(document).ready(function( $ ){
         } else {
 
             removeClassFromList;        
-            $('.home .inside-header .main-navigation .main-nav ul li:first-child')
+            $('.home .inside-header .main-navigation .main-nav>ul>li:first-child')
              .addClass("current-menu-item");
     	};
       

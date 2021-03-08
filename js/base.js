@@ -43,14 +43,13 @@ jQuery(document).ready(function( $ ){
             $(menuIcon).removeClass('scroll');
         };
 
-        // Define <li> element and remove class
+        // Define <li> element and remove class (only homepage)
         const removeClassFromList = $(`
-            .inside-header .main-navigation .main-nav ul li
+            .home .inside-header .main-navigation .main-nav ul li
         `).removeClass("current-menu-item");
 
-        // returns nth <li> element and adds class
+        // returns nth <li> element and adds class (only homepage)
         function addClassToItem(child) {
-            // restricted to home page
             return $(`
                 .home .inside-header .main-navigation .main-nav ul li:nth-child(${child})
             `).addClass("current-menu-item");
@@ -85,6 +84,6 @@ jQuery(document).ready(function( $ ){
      * Highlight "Our Homes" on product pages
      */
     $('.woocommerce .inside-header .main-navigation .main-nav ul li:nth-child(3)')
-         .addClass("current-menu-item");
+        .addClass("current-menu-item");
   
 });

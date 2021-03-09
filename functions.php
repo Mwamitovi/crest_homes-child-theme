@@ -11,6 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 define( 'GPC_VERSION', '1.0.0' );
 
+
 /**
  * Load jQuery
  */
@@ -18,6 +19,7 @@ add_action( 'wp_footer', 'gpc_load_jquery' );
 function gpc_load_jquery() {
  	wp_enqueue_script( 'jquery' );
 }
+
 
 /**
  * Enqueue scripts and styles.
@@ -32,10 +34,13 @@ function gpc_scripts() {
 
 	wp_enqueue_style('gpc-base', get_stylesheet_directory_uri() . '/css/base.css', false, GPC_VERSION, 'all');
 
-	wp_enqueue_style('ch-style', get_stylesheet_directory_uri() . '/css/style.css', false, GPC_VERSION, 'all');
+	wp_enqueue_style('cresth-style', get_stylesheet_directory_uri() . '/css/style.css', false, GPC_VERSION, 'all');
  
  	wp_enqueue_script('gpc-scripts', get_stylesheet_directory_uri() . '/js/base.js', array('jquery'), GPC_VERSION, true );
+
+ 	wp_enqueue_script('cresth-responsive', get_stylesheet_directory_uri() . '/js/responsive.js', array('jquery'), GPC_VERSION, true );
 }
+
 
 /**
  * Enqueue admin scripts and styles.
@@ -45,6 +50,7 @@ function gpc_admin_scripts() {
     wp_enqueue_style( 'gpc-editor', get_stylesheet_directory_uri() . '/admin/css/editor.css', false, GPC_VERSION, 'all');
 }
 
+
 /**
  * Add body classes.
  */
@@ -53,6 +59,7 @@ function gpc_body_classes( $classes ) {
     $classes[] = 'gpc';
     return $classes;
 }
+
 
 /**
  * Add .has-js class to html element.
@@ -64,6 +71,42 @@ function gpc_add_js_class() { ?>
         htmlEl.classList.add('has-js');
     </script>
 <?php }
+
+
+/** 
+ * Conditionally navbar menus
+ *
+ * Apperance > menus (We have two menus);
+ * 
+ * > Site Menu - 'primary menu'
+ * > Main Menu - '' 
+ * 
+ * Change menus using this function.
+ * To mitigate the #id used in page scroll on home page.
+ */
+add_filter( 'wp_nav_menu_args', 'gpc_cresth_main_menu' );
+function gpc_cresth_main_menu ( $args = '' ) {
+	// check if we have a primary location & a static home page
+	if( $args['theme_location'] == 'primary' && is_front_page() ) { 
+		$args['menu'] = 2; // Main Menu "id"
+	};
+
+	return $args;
+}
+
+/**
+ * Update footer message
+ */
+add_filter( 'generate_copyright','gpc_cresth_footer' );
+function gpc_cresth_footer() {
+	$copyright = sprintf(
+		'<span class="copyright">&copy; %1$s &bull; %2$s</span>',
+		date( 'Y' ), // phpcs:ignore
+		get_bloginfo( 'name' )
+	);
+
+	echo $copyright;
+}
 
 /**
  * Include other functions as needed from the `inc` folder.
@@ -80,8 +123,8 @@ require get_stylesheet_directory() . '/inc/sub-menu-widget.php';
 require get_stylesheet_directory() . '/inc/breadcrumbs.php';
 require get_stylesheet_directory() . '/inc/optimizations.php';
 require get_stylesheet_directory() . '/inc/image-sizes.php';
+require get_stylesheet_directory() . '/inc/woocommerce.php';
 // require get_stylesheet_directory() . '/inc/wp-show-posts.php';
 // require get_stylesheet_directory() . '/inc/cpt-output-custom.php';
 // require get_stylesheet_directory() . '/inc/advanced-custom-fields.php';
-// require get_stylesheet_directory() . '/inc/woocommerce.php';
 // require get_stylesheet_directory() . '/inc/shortcodes.php';

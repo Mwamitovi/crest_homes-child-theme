@@ -6,10 +6,12 @@
  * 1. Defaults
  * 2. Header and Nav
  * 3. About Us
- * 4. Contact Us / Booking form
- * 5. Components
- * 7. Footer
- * 8. Other
+ * 4. Our Homes
+ * 5. Contact Us
+ * 6. Widgets
+ * 7. Woocommerce
+ * 8. Footer
+ * 9. Other
  *
  */
 
@@ -26,23 +28,55 @@ h5 {
 	font-weight: 300;
 }
 
+.ch-social-icons {
+	position: relative;
+	z-index: 1;
+}
+
+.ch-social-icons.scroll {
+	z-index: 0;
+}
+
+
 /* Header & Nav
    ========================================================================== */
-
-.site-header.element-is-sticky {
-	width: 1441px !important;
-}
 
 .site-header .inside-header {
 	display: flex;
 	align-items: center;
 	padding: 22.5px 60px;
 	margin-bottom: -140px;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+    box-shadow: none;
+}
+
+.site-header .inside-header.scroll {
+    background-color: #ffffff;
+    padding: 8.5px 60px;
+    margin-top: -1.99px;
+    transition: 0.3s ease-in-out;
+  	box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);      
+}
+
+@media screen and (max-width: 1024px) {
+	.site-header .inside-header {
+		padding: 22.5px 36px;
+	}
 }
 
 .inside-header .site-logo {
 	flex: 1;
-  z-index: 11;
+  	z-index: 11;
+}
+
+.inside-header .site-logo .header-image {
+	width: 220px;
+    transition: 0.3s ease-in-out;
+}
+
+.inside-header .site-logo .header-image.scroll {
+  	width: 160px;
 }
 
 .inside-header .main-navigation {
@@ -57,11 +91,21 @@ h5 {
 
 .inside-header .main-navigation li:not(:last-child) {
 	margin-right: 36.5px;
+	transition: 0.3s ease-in-out;
+}
+
+.inside-header .main-navigation li.scroll:not(:last-child) {
+	margin-right: 60px;
 }
 
 .inside-header .main-navigation a {
 	font-size: 25px;
 	font-weight: 600;
+	transition: 0.3s ease-in-out;
+}
+
+.inside-header .main-navigation a.scroll {
+	font-size: 21px;
 }
 
 .inside-header .main-navigation .main-nav ul li a, .menu-toggle {
@@ -89,6 +133,63 @@ h5 {
 	background-color: transparent;
 }
 
+#rmp_menu_trigger-617.scroll {
+	top: 4px;
+}
+
+@media screen and (max-width: 1024px) {
+
+	.site-header .main-navigation {
+		display: none;
+	}
+
+	[type=button]:focus, [type=submit]:focus, button:focus {
+		outline: none; }
+
+	.rmp_menu_trigger {
+		height: 65px !important;
+		background: transparent !important;	}
+
+	.rmp-container {
+		width: 50% !important;
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); }
+
+	.rmp-container,
+	.responsive-menu-pro-inner,
+	.rmp-menu-wrap .rmp-menu-item-link {
+		background: #3f3f3f !important;
+		border-top: 1px solid #3f3f3f !important; }
+
+	.rmp-menu-wrap .rmp-menu-current-item .rmp-menu-item-link,
+	.rmp-menu-wrap .rmp-menu-item-link:hover,
+	.rmp-menu-wrap .rmp-menu-item-link:focus,
+	.rmp-menu-wrap .rmp-menu-item-link:active {
+		color: #1C6CC2 !important;
+		background: #FFFFFF !important; }
+
+	.responsive-menu-pro-inner {
+		width: 32px !important; }
+
+	.rmp-menu-wrap .rmp-menu-item-link {
+		font-family: 'Montserrat-Regular', Sans-serif !important;
+		font-size: 1.125rem !important;
+		font-weight: 600 !important;
+		letter-spacing: .05rem; }
+}
+
+@media screen and (max-width: 768px) {
+	.rmp-container {
+		width: 75% !important; }
+
+	.rmp_menu_trigger {
+		height: 55px !important; }
+}
+
+@media screen and (max-width: 576px) {
+	.rmp_menu_trigger {
+		height: 42.5px !important; }
+}
+
 
 /* About Us
    ========================================================================== */
@@ -97,19 +198,128 @@ h5 {
 	margin-left: 0px !important; 
 }
 
-.about-us--section .section-title,
+.about-us--section  .section-title,
 .our-homes--section .ch-gallery-title {
 	writing-mode: tb;
 	-webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+  	-moz-transform: rotate(180deg);
+  	-o-transform: rotate(180deg);
+  	-ms-transform: rotate(180deg);
+  	transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1024px) {
+	.about-us--section .section-title > h2 {
+		font-size: 60px !important;
+	}
 }
 
 
-/* Contact Us / Booking form
+/* Our Homes
    ========================================================================== */
+
+.our-homes--section .woocommerce .woocommerce-result-count,
+.our-homes--section .woocommerce .woocommerce-ordering {
+	display: none;
+}
+
+.our-homes--section .woocommerce ul.products li.product .woocommerce-loop-category__title, 
+.our-homes--section .woocommerce ul.products li.product .woocommerce-loop-product__title, 
+.our-homes--section .woocommerce ul.products li.product h3 {
+	font-size: 1.425rem;
+}
+
+.our-homes--section .woocommerce ul.products li.product a img {
+	height: fit-content;
+}
+
+@media screen and (max-width: 1024px) {
+	.our-homes--section h2.gb-headline {
+		font-size: 60px;
+		padding: 0 10px 0 25px;
+	}
+
+	ul.cta-message {
+		margin: 0 0 1.5em 1.08em;
+	}
+
+	.our-homes--section .woocommerce .products ul, 
+	.our-homes--section .woocommerce ul.products {
+		margin: 0 0 1em 1.85em;
+	}
+
+	.our-homes--section .woocommerce ul.products li.product, 
+	.our-homes--section .woocommerce-page ul.products li.product {
+		margin: 0 2% 2.992em 0;
+	}
+
+	.our-homes--section .woocommerce ul.products li.product a img {
+		height: unset;
+	}
+}
+
+
+/* Contact Us
+   ========================================================================== */
+
+@media screen and (max-width: 1024px) {
+	.contact-us--section h1.gb-headline {
+		font-size: 60px;
+	}	
+
+	.contact-us--section h3.gb-headline {
+		font-size: 20px;
+	}
+
+	.contact-us--section .contact--details > .gb-inside-container {
+		padding-right: 0; 
+	}
+
+	.contact-us--section .contact--details .phone-contact > .gb-inside-container {
+		padding-left: 0; 
+	}
+}
+
+
+/* Widgets
+   ========================================================================== */
+
+/* main slider */
+
+@media screen and (max-width: 1024px) {
+	.n2-ss-slider .n2-ss-layer[data-sstype=col] {
+		width: 40px !important;
+	}	
+
+	.n2-ss-button-container > a {
+		padding: 9px 30px !important;
+		margin-top: 7.5px !important;
+	}
+}
+
+/* social icons */
+
+@media screen and (max-width: 1024px) {
+	.ch-social-icons .gb-inside-container .gb-inside-container > .gb-grid-wrapper > .gb-grid-column {
+		padding-left: 0px !important;
+	}	
+
+	.ch-social-icons .gb-inside-container .gb-inside-container > .gb-grid-wrapper > .gb-grid-column:first-child {
+		width: 42% !important;
+	}
+
+	.ch-social-icons .gb-inside-container .gb-inside-container > .gb-grid-wrapper > .gb-grid-column:nth-child(2),
+	.ch-social-icons .gb-inside-container .gb-inside-container > .gb-grid-wrapper > .gb-grid-column:nth-child(3) {
+		width: 14.5% !important;
+	}
+
+	.contact-us--section .ch-social-icons.gb-grid-wrapper > .gb-grid-column:first-child,
+	.contact-us--section .ch-social-icons.gb-grid-wrapper > .gb-grid-column:nth-child(2) {
+		width: 16.5% !important;
+	}
+}
+
+/* Booking form */
 
 .nf-form-cont {
 	margin-left: 50px;
@@ -145,18 +355,32 @@ h5 {
 }
 
 .contact-us--section .nf-form-content .listselect-wrap .nf-field-element div,
-.our-homes--section .nf-form-content .listselect-wrap .nf-field-element div,
+.our-homes--section  .nf-form-content .listselect-wrap .nf-field-element div,
 .contact-us--section .nf-form-content .ninja-forms-field,
-.our-homes--section .nf-form-content .ninja-forms-field {
+.our-homes--section  .nf-form-content .ninja-forms-field {
 	font-size: 22.5px;
 }
 
+@media screen and (max-width: 1024px) {
+	.contact-us--section .nf-form-content .listselect-wrap .nf-field-element div,
+	.our-homes--section  .nf-form-content .listselect-wrap .nf-field-element div,
+	.contact-us--section .nf-form-content .ninja-forms-field,
+	.our-homes--section  .nf-form-content .ninja-forms-field {
+		font-size: 20px;
+	}
+
+	.our-homes--section .nf-form-content .ninja-forms-field,
+	.our-homes--section .nf-form-content .listselect-wrap .nf-field-element div {
+		padding: 5px;
+	}
+}
+
 .contact-us--section .nf-form-content .list-select-wrap .nf-field-element > div, 
-.our-homes--section .nf-form-content .list-select-wrap .nf-field-element > div, 
+.our-homes--section  .nf-form-content .list-select-wrap .nf-field-element > div, 
 .contact-us--section .nf-form-content input:not([type=button]), 
-.our-homes--section .nf-form-content input:not([type=button]), 
+.our-homes--section  .nf-form-content input:not([type=button]), 
 .contact-us--section .nf-form-content textarea,
-.our-homes--section .nf-form-content textarea {
+.our-homes--section  .nf-form-content textarea {
 	background: transparent;
 	border: none;
 	color: #4C1031FF;
@@ -164,11 +388,11 @@ h5 {
 }
 
 .contact-us--section .nf-form-content .list-select-wrap .nf-field-element > div:focus, 
-.our-homes--section .nf-form-content .list-select-wrap .nf-field-element > div:focus, 
+.our-homes--section  .nf-form-content .list-select-wrap .nf-field-element > div:focus, 
 .contact-us--section .nf-form-content input:not([type=button]):focus, 
-.our-homes--section .nf-form-content input:not([type=button]):focus, 
+.our-homes--section  .nf-form-content input:not([type=button]):focus, 
 .contact-us--section .nf-form-content textarea:focus,
-.our-homes--section .nf-form-content textarea:focus {
+.our-homes--section  .nf-form-content textarea:focus {
 	background: transparent;
 }
 
@@ -176,7 +400,7 @@ h5 {
 	height: 50px;
 }
 
-.our-homes--section .nf-form-content textarea.ninja-forms-field {
+.our-homes--section  .nf-form-content textarea.ninja-forms-field {
 	height: 50px;
 }
 
@@ -184,73 +408,89 @@ h5 {
 	margin-top: 60px;
 }
 
-.our-homes--section .nf-form-content nf-field:first-child > .nf-field-container {
+.our-homes--section  .nf-form-content nf-field:first-child > .nf-field-container {
 	margin-top: 0px;
 }
 
-.our-homes--section .nf-form-content nf-field:not(:first-child) > .nf-field-container {
+.our-homes--section  .nf-form-content nf-field:not(:first-child) > .nf-field-container {
 	margin-top: 12px;
 }
 
-.our-homes--section .nf-form-content nf-field:nth-child(2) > .nf-field-container,
-.our-homes--section .nf-form-content nf-field:nth-child(3) > .nf-field-container {
+.our-homes--section  .nf-form-content nf-field:nth-child(2) > .nf-field-container,
+.our-homes--section  .nf-form-content nf-field:nth-child(3) > .nf-field-container {
 	margin-top: 35px;
 }
 
-.our-homes--section .nf-form-content .listselect-wrap .nf-field-element div,
-.our-homes--section .nf-form-content input.ninja-forms-field, 
-.our-homes--section .nf-form-content select.ninja-forms-field:not([multiple]) {
+.our-homes--section  .nf-form-content .listselect-wrap .nf-field-element div,
+.our-homes--section  .nf-form-content input.ninja-forms-field, 
+.our-homes--section  .nf-form-content select.ninja-forms-field:not([multiple]) {
 	height: 53.5px;
 }
 
 .contact-us--section .nf-form-content button, 
-.our-homes--section .nf-form-content button, 
+.our-homes--section  .nf-form-content button, 
 .contact-us--section .nf-form-content input[type=button], 
-.our-homes--section .nf-form-content input[type=button], 
+.our-homes--section  .nf-form-content input[type=button], 
 .contact-us--section .nf-form-content input[type=submit],
-.our-homes--section .nf-form-content input[type=submit] {
+.our-homes--section  .nf-form-content input[type=submit] {
 	background: #4C1031FF;
 	padding: 8px 32px 12px;
 	border-radius: 28px;
 }
 
-.our-homes--section .nf-form-content button, 
-.our-homes--section .nf-form-content input[type=button], 
-.our-homes--section .nf-form-content input[type=submit] {
+.our-homes--section  .nf-form-content button, 
+.our-homes--section  .nf-form-content input[type=button], 
+.our-homes--section  .nf-form-content input[type=submit] {
 	margin-top: 27px;
 }
 
-.contact-us--section .nf-form-content button:hover, 
-.contact-us--section .nf-form-content button:focus, 
-.contact-us--section .nf-form-content button:active, 
+.contact-us--section .nf-form-content button:hover,
+.contact-us--section .nf-form-content button:focus,
+.contact-us--section .nf-form-content button:active,
 .contact-us--section .nf-form-content input[type=button]:hover, 
 .contact-us--section .nf-form-content input[type=button]:focus, 
 .contact-us--section .nf-form-content input[type=button]:active, 
 .contact-us--section .nf-form-content input[type=submit]:hover,
 .contact-us--section .nf-form-content input[type=submit]:focus,
 .contact-us--section .nf-form-content input[type=submit]:active,
-.our-homes--section .nf-form-content button:hover, 
-.our-homes--section .nf-form-content button:focus, 
-.our-homes--section .nf-form-content button:active, 
-.our-homes--section .nf-form-content input[type=button]:hover, 
-.our-homes--section .nf-form-content input[type=button]:focus, 
-.our-homes--section .nf-form-content input[type=button]:active, 
-.our-homes--section .nf-form-content input[type=submit]:hover,
-.our-homes--section .nf-form-content input[type=submit]:focus,
-.our-homes--section .nf-form-content input[type=submit]:active {
+.our-homes--section  .nf-form-content button:hover,
+.our-homes--section  .nf-form-content button:focus,
+.our-homes--section  .nf-form-content button:active,
+.our-homes--section  .nf-form-content input[type=button]:hover,
+.our-homes--section  .nf-form-content input[type=button]:focus,
+.our-homes--section  .nf-form-content input[type=button]:active,
+.our-homes--section  .nf-form-content input[type=submit]:hover,
+.our-homes--section  .nf-form-content input[type=submit]:focus,
+.our-homes--section  .nf-form-content input[type=submit]:active {
 	background: #EE615EFF;
 	color: #FFFFFF;
 }
 
 .contact-us--section .nf-form-content .nf-after-field .nf-error .nf-error-msg,
-.our-homes--section .nf-form-content .nf-after-field .nf-error .nf-error-msg {
+.our-homes--section  .nf-form-content .nf-after-field .nf-error .nf-error-msg {
 	margin-bottom: -32px;
 }
 
+@media screen and (max-width: 1024px) {
+	.contact-us--section .nf-form-content .nf-after-field .nf-error .nf-error-msg,
+	.our-homes--section  .nf-form-content .nf-after-field .nf-error .nf-error-msg {
+		font-size: 14.5px;
+	}
+}
+
 .contact-us--section .nf-after-form-content .nf-form-errors .nf-error-msg,
-.our-homes--section .nf-after-form-content .nf-form-errors .nf-error-msg {
+.our-homes--section  .nf-after-form-content .nf-form-errors .nf-error-msg {
 	margin-left: 6px;
 	margin-top: -18px;
+}
+
+@media screen and (max-width: 1024px) {
+	.contact-us--section .nf-error.field-wrap .nf-field-element:after,
+	.our-homes--section  .nf-error.field-wrap .nf-field-element:after {
+		height: 40px;
+		width: 40px;
+		line-height: 45px;
+	}
 }
 
 #phone-number .gb-icon svg {
@@ -258,9 +498,13 @@ h5 {
 }
 
 
-/* Widgets
+/* Woocommerce
    ========================================================================== */
 
+.product .breadcrumbs > a:nth-child(3),
+.product .breadcrumbs > span:nth-child(4) {
+	display: none;
+}
 
 
 /* Footer
@@ -270,13 +514,17 @@ h5 {
 	color: #4C1031;
 	font-weight: 500;
 	background-color: transparent;
-  display: none;
 }
+
 
 /* Other
    ========================================================================== */
 
 #page {
 	margin-bottom: -62.5px;
+}
+
+.single.one-container .site-content {
+	padding-top: 195px !important;
 }
 

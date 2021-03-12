@@ -18,6 +18,11 @@
 /* Defaults
    ========================================================================== */
 
+html,
+body {
+	overflow-x: hidden;
+}
+
 h4 {
 	font-size: 32px;
 	font-weight: 400;
@@ -59,9 +64,21 @@ h5 {
   	box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);      
 }
 
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+	.site-header .inside-header,
+	.site-header .inside-header.scroll {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
 @media screen and (max-width: 1024px) {
 	.site-header .inside-header {
 		padding: 22.5px 36px;
+	}
+
+	.site-header .inside-header.scroll {
+    	padding: 12.5px 36px;
 	}
 }
 
@@ -89,6 +106,16 @@ h5 {
 	justify-content: flex-end;
 }
 
+@media screen and (max-width: 768px) {
+	.inside-header>:not(:last-child):not(.main-navigation) {
+		margin-bottom: 0 !important;
+	}
+
+	.site-header {
+		text-align: left !important;
+	}
+}
+
 .inside-header .main-navigation li:not(:last-child) {
 	margin-right: 36.5px;
 	transition: 0.3s ease-in-out;
@@ -96,6 +123,12 @@ h5 {
 
 .inside-header .main-navigation li.scroll:not(:last-child) {
 	margin-right: 60px;
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+	.inside-header .main-navigation li:not(:last-child) {
+		margin-right: 10.5px;
+	}
 }
 
 .inside-header .main-navigation a {

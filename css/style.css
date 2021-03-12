@@ -247,6 +247,12 @@ h5 {
 	}
 }
 
+@media screen and (max-width: 768px) {
+	.about-us--section .section-title > h2 {
+		font-size: 45px !important;
+	}
+}
+
 
 /* Our Homes
    ========================================================================== */

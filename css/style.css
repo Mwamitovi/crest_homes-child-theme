@@ -297,6 +297,33 @@ h5 {
 	}
 }
 
+@media screen and (max-width: 768px) {
+	.our-homes--section h2.gb-headline {
+		font-size: 45px;
+	}
+
+	.our-homes--section .woocommerce ul.products li.product, 
+	.our-homes--section .woocommerce-page ul.products li.product {
+		margin: 0 9% 2.992em 0;
+	}
+
+	.our-homes--section .woocommerce ul.products li.product:nth-child(odd), 
+	.our-homes--section .woocommerce-page ul.products li.product:nth-child(odd) {
+		text-align: right;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	ul.cta-message {
+		margin: 0 0 1.5em 0em;
+		list-style: none;
+	}
+
+	ul.cta-message > li {
+		margin-bottom: 1em;
+	}
+}
+
 
 /* Contact Us
    ========================================================================== */
@@ -419,6 +446,12 @@ h5 {
 	margin-left: 50px;
 }
 
+@media screen and (max-width: 768px) {
+	.nf-form-cont {
+		margin-left: 10px;
+	}	
+}
+
 .our-homes-text {
 	margin-left: 2.5px;
 	font-size: 21.5px;
@@ -507,11 +540,6 @@ h5 {
 }
 
 .our-homes--section  .nf-form-content nf-field:not(:first-child) > .nf-field-container {
-	margin-top: 12px;
-}
-
-.our-homes--section  .nf-form-content nf-field:nth-child(2) > .nf-field-container,
-.our-homes--section  .nf-form-content nf-field:nth-child(3) > .nf-field-container {
 	margin-top: 35px;
 }
 

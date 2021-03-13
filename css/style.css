@@ -177,37 +177,46 @@ h5 {
 	}
 
 	[type=button]:focus, [type=submit]:focus, button:focus {
-		outline: none; }
+		outline: none; 
+	}
 
 	.rmp_menu_trigger {
 		height: 65px !important;
-		background: transparent !important;	}
+		background: transparent !important;	
+	}
 
 	.rmp-container {
 		width: 50% !important;
-		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); }
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	}
 
 	.rmp-container,
 	.responsive-menu-pro-inner,
 	.rmp-menu-wrap .rmp-menu-item-link {
-		background: #3f3f3f !important;
-		border-top: 1px solid #3f3f3f !important; }
+		background-image: url("../img/crest-homes-site-icon.png") !important; 
+		background-position: center center; 
+		background-size: cover; 
+		background-repeat: no-repeat; 
+		background-attachment: fixed;
+	}
 
 	.rmp-menu-wrap .rmp-menu-current-item .rmp-menu-item-link,
 	.rmp-menu-wrap .rmp-menu-item-link:hover,
 	.rmp-menu-wrap .rmp-menu-item-link:focus,
 	.rmp-menu-wrap .rmp-menu-item-link:active {
-		color: #1C6CC2 !important;
-		background: #FFFFFF !important; }
+		color: #EE615E !important;
+		background: #FFFFFF !important; 
+	}
 
 	.responsive-menu-pro-inner {
-		width: 32px !important; }
+		width: 32px !important; 
+	}
 
 	.rmp-menu-wrap .rmp-menu-item-link {
-		font-family: 'Montserrat-Regular', Sans-serif !important;
 		font-size: 1.125rem !important;
 		font-weight: 600 !important;
-		letter-spacing: .05rem; }
+		letter-spacing: .05rem; 
+	}
 }
 
 @media screen and (max-width: 768px) {

@@ -472,6 +472,12 @@ h5 {
 	font-size: 14.5px;
 }
 
+@media screen and (max-width: 767px) {
+	.contact-us--section .nf-form-cont .nf-form-fields-required {
+		text-align: unset;
+	}
+}
+
 .nf-form-cont .nf-form-content .nf-field .nf-field-label {
 	display: none;
 }
@@ -523,6 +529,17 @@ h5 {
 	background: transparent;
 }
 
+@media screen and (max-width: 767px) {
+	.contact-us--section .nf-form-content .list-select-wrap .nf-field-element > div, 
+	.our-homes--section  .nf-form-content .list-select-wrap .nf-field-element > div, 
+	.contact-us--section .nf-form-content input:not([type=button]), 
+	.our-homes--section  .nf-form-content input:not([type=button]), 
+	.contact-us--section .nf-form-content textarea,
+	.our-homes--section  .nf-form-content textarea {
+		text-align: center;
+	}	
+}
+
 .contact-us--section .nf-form-content textarea.ninja-forms-field {
 	height: 50px;
 }
@@ -547,6 +564,56 @@ h5 {
 .our-homes--section  .nf-form-content input.ninja-forms-field, 
 .our-homes--section  .nf-form-content select.ninja-forms-field:not([multiple]) {
 	height: 53.5px;
+}
+
+@media screen and (max-width: 767px) {
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6),
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(7) {
+		display: inline-flex;
+	}	
+
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6) {
+		width: 70%;
+	}
+
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6) .one-half {
+		width: 90%;
+	}
+
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(7) {
+		width: 30%;
+	}
+
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6) .nf-field-container .nf-field-description,
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(7) .nf-field-container .nf-field-description {
+		text-align: left;
+	}
+}
+
+@media screen and (max-width: 667px) {
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6) {
+		width: 60%;
+	}
+
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(7) {
+		width: 40%;
+	}
+}
+
+@media screen and (max-width: 499px) {
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6),
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(7) {
+		display: unset;
+	}	
+
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6) .one-half {
+		width: unset;
+	}
+
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6) .nf-field-container .nf-field-description,
+	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(7) .nf-field-container .nf-field-description {
+		text-align: unset;
+	}
 }
 
 .contact-us--section .nf-form-content button, 

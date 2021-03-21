@@ -61,12 +61,12 @@ jQuery(document).ready(function( $ ){
             removeClassFromList;        
             addClassToItem(2);
           
-        } else if ($( this ).scrollTop() > 1600 && $( this ).scrollTop() < 2400) {
+        } else if ($( this ).scrollTop() > 1600 && $( this ).scrollTop() < 3600) {
           
             removeClassFromList;
             addClassToItem(3);
 
-        } else if ($( this ).scrollTop() > 2400) {
+        } else if ($( this ).scrollTop() > 3600) {
               
             removeClassFromList;
             addClassToItem(4);

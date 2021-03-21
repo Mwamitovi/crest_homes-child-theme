@@ -277,6 +277,10 @@ body.woocommerce-page .site-header .inside-header {
 	display: none;
 }
 
+.our-homes--section > .gb-inside-container > .gb-container > .gb-inside-container {
+	padding-bottom: 105px !important;
+}
+
 .our-homes--section .woocommerce ul.products li.product .woocommerce-loop-category__title, 
 .our-homes--section .woocommerce ul.products li.product .woocommerce-loop-product__title, 
 .our-homes--section .woocommerce ul.products li.product h3 {
@@ -285,6 +289,15 @@ body.woocommerce-page .site-header .inside-header {
 
 .our-homes--section .woocommerce ul.products li.product a img {
 	height: fit-content;
+}
+
+#booking-details > .gb-inside-container > .gb-grid-wrapper > .gb-grid-column {
+	width: 100% !important;
+	text-align: center;
+}
+
+ul.cta-message {
+	list-style: none;
 }
 
 @media screen and (max-width: 1024px) {
@@ -331,7 +344,6 @@ body.woocommerce-page .site-header .inside-header {
 @media screen and (max-width: 767px) {
 	ul.cta-message {
 		margin: 0 0 1.5em 0em;
-		list-style: none;
 	}
 
 	ul.cta-message > li {
@@ -436,6 +448,15 @@ body.woocommerce-page .site-header .inside-header {
 }
 
 /* social icons */
+
+.contact-us--section #whatsapp {
+	cursor: pointer;
+}
+
+.ch-banner-title .cta-column:first-of-type {
+	/* hides "Book now" button on slides */
+	display: none !important;
+}
 
 @media screen and (max-width: 1024px) {
 	.contact-us--section .ch-social-icons.gb-grid-wrapper > .gb-grid-column:first-child,
@@ -808,7 +829,7 @@ body.woocommerce-page .site-header .inside-header {
 	margin-bottom: -62.5px;
 }
 
-.single.one-container .site-content {
+.single.one-container .site-content,
+.woocommerce-page.one-container .site-content {
 	padding-top: 195px !important;
 }
-

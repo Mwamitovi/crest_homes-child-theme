@@ -85,5 +85,15 @@ jQuery(document).ready(function( $ ){
      */
     $('.woocommerce .inside-header .main-navigation .main-nav ul li:nth-child(3)')
         .addClass("current-menu-item");
+
+    /**
+     * Link to Whatsapp
+     */
+    $('#whatsapp').on('click', function() { 
+        window.open(
+            'https://api.whatsapp.com/send?phone=+256759906350&amp;text=I-am-interested-in-booking-a-home',
+            '_blank'
+        )
+    });
   
 });

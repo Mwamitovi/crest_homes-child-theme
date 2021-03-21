@@ -18,6 +18,10 @@ function gpc_woo_sidebar( $layout ) {
         return 'no-sidebar';
     }
 
+    if ( function_exists( 'is_woocommerce' ) && (is_cart() || is_checkout()) ) {
+        return 'no-sidebar';
+    }
+
     // Or else, set the regular layout
     return $layout;
 }

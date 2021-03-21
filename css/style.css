@@ -64,6 +64,12 @@ h5 {
   	box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);      
 }
 
+
+body.woocommerce-page .site-header .inside-header {
+	background-color: #ffffff;
+  	box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.02), 0px 4px 5px 0px rgba(0,0,0,0.02), 0px 1px 10px 0px rgba(0,0,0,0.12);      
+}
+
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
 	.site-header .inside-header,
 	.site-header .inside-header.scroll {
@@ -98,7 +104,7 @@ h5 {
 
 .inside-header .main-navigation {
 	flex: 2;
-	background-color: transparent;
+	background-color: transparent;	
 }
 
 .inside-header .main-navigation .inside-navigation {
@@ -770,6 +776,18 @@ h5 {
 .product .breadcrumbs > a:nth-child(3),
 .product .breadcrumbs > span:nth-child(4) {
 	display: none;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+	margin-top: 1.75em !important;
+}
+
+.woocommerce .col2-set, 
+.woocommerce-page .col2-set,
+#customer_details+#wc_checkout_add_ons, 
+#order_review, #order_review_heading {
+    float: none;
+    width: 100%;
 }
 
 

@@ -33,6 +33,10 @@ h5 {
 	font-weight: 300;
 }
 
+.full-screen {
+	width: 100% !important;
+}
+
 .ch-social-icons {
 	position: relative;
 	z-index: 1;
@@ -132,7 +136,8 @@ body.woocommerce-page .site-header .inside-header {
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
-	.inside-header .main-navigation li:not(:last-child) {
+	.inside-header .main-navigation li:not(:last-child),
+	.inside-header .main-navigation li.scroll:not(:last-child) {
 		margin-right: 10.5px;
 	}
 }
@@ -298,16 +303,19 @@ body.woocommerce-page .site-header .inside-header {
 
 ul.cta-message {
 	list-style: none;
+	margin: 0 0 1.5em 0em;
+}
+
+ul.cta-message > li:nth-child(2),
+ul.cta-message > li:nth-child(4) {
+	margin: -10px;
+	color: #4c1031;
 }
 
 @media screen and (max-width: 1024px) {
 	.our-homes--section h2.gb-headline {
 		font-size: 60px;
 		padding: 0 10px 0 25px;
-	}
-
-	ul.cta-message {
-		margin: 0 0 1.5em 1.08em;
 	}
 
 	.our-homes--section .woocommerce .products ul, 
@@ -576,7 +584,6 @@ ul.cta-message {
 }
 
 .our-homes-text {
-	margin-left: 2.5px;
 	font-size: 21.5px;
 }
 

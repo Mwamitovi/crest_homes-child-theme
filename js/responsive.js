@@ -11,7 +11,7 @@ jQuery(document).ready(function( $ ){
     $(".site-header .main-navigation").addClass('mobile-hide tablet-hide'); 
 
     // Overide "Sticky menu" settings
-    $(".site-header").addClass('fit');
+    $(".site-header").addClass('full-screen');
 
     /** 
      * Responsive-menu hack

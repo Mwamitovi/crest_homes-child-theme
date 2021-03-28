@@ -79,6 +79,13 @@ body.woocommerce-page .site-header .inside-header {
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
+	.main-navigation .main-nav ul li a {
+		padding-left: 9.5px !important;
+		padding-right: 9.5px !important;
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
 	.site-header .inside-header,
 	.site-header .inside-header.scroll {
 		padding-left: 30px;
@@ -136,13 +143,20 @@ body.woocommerce-page .site-header .inside-header {
 }
 
 .inside-header .main-navigation li.scroll:not(:last-child) {
-	margin-right: 60px;
+	margin-right: 50px;
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1398px) {
+	.inside-header .main-navigation li:not(:last-child),
+	.inside-header .main-navigation li.scroll:not(:last-child) {
+		margin-right: 3.5px;
+	}
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
 	.inside-header .main-navigation li:not(:last-child),
 	.inside-header .main-navigation li.scroll:not(:last-child) {
-		margin-right: 10.5px;
+		margin-right: 7.5px;
 	}
 }
 
@@ -871,8 +885,4 @@ ul.cta-message > li:nth-child(4) {
 
 .has-drop-cap:not(:focus):first-letter {
 	font-size: 4em !important;
-}
-
-#sub-frame-error {
-	background-color: #ee615e1f !important;
 }

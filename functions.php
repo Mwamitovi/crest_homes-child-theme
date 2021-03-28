@@ -73,27 +73,6 @@ function gpc_add_js_class() { ?>
 <?php }
 
 
-/** 
- * Conditionally navbar menus
- *
- * Apperance > menus (We have two menus);
- * 
- * > Site Menu - 'primary menu'
- * > Main Menu - '' 
- * 
- * Change menus using this function.
- * To mitigate the #id used in page scroll on home page.
- */
-add_filter( 'wp_nav_menu_args', 'gpc_cresth_main_menu' );
-function gpc_cresth_main_menu ( $args = '' ) {
-	// check if we have a primary location & a static home page
-	if( $args['theme_location'] == 'primary' && is_front_page() ) { 
-		$args['menu'] = 2; // Main Menu "id"
-	};
-
-	return $args;
-}
-
 /**
  * Update footer message
  */

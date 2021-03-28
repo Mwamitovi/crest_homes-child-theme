@@ -91,7 +91,7 @@ jQuery(document).ready(function( $ ){
      */
     $('#whatsapp').on('click', function() { 
         window.open(
-            'https://api.whatsapp.com/send?phone=+256759906350&amp;text=I-am-interested-in-booking-a-home',
+            'https://api.whatsapp.com/send?phone=256759906350&amp;text=I-am-interested-in-booking-a-home',
             '_blank'
         )
     });

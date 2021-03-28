@@ -23,6 +23,10 @@ body {
 	overflow-x: hidden;
 }
 
+body.page .breadcrumbs {
+	display: none;
+}
+
 h4 {
 	font-size: 32px;
 	font-weight: 400;
@@ -613,7 +617,8 @@ ul.cta-message > li:nth-child(4) {
 }
 
 .our-homes--section,
-.contact-us--section {
+.contact-us--section,
+.brand--section {
 	background: #ee615e1f;
 }
 
@@ -858,4 +863,16 @@ ul.cta-message > li:nth-child(4) {
 .single.one-container .site-content,
 .woocommerce-page.one-container .site-content {
 	padding-top: 195px !important;
+}
+
+.page .entry-content:not(:first-child), .page .entry-summary:not(:first-child), .page .page-content:not(:first-child) {
+	margin-top: 0;
+}
+
+.has-drop-cap:not(:focus):first-letter {
+	font-size: 4em !important;
+}
+
+#sub-frame-error {
+	background-color: #ee615e1f !important;
 }

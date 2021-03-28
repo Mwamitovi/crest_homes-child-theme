@@ -11,7 +11,8 @@
  * 6. Widgets
  * 7. Woocommerce
  * 8. Footer
- * 9. Other
+ * 9. Error page
+ * 10. Other
  *
  */
 
@@ -866,6 +867,34 @@ ul.cta-message > li:nth-child(4) {
 	background-color: transparent;
 }
 
+
+/* Error page
+   ========================================================================== */
+
+body.error404 .breadcrumbs {
+	display: none;
+}
+
+body.error404,
+.error404.one-container .site-content {
+	background: #ee615e1f;
+}
+
+.error404.one-container .site-content {
+	text-align: center;
+	padding: 285px 0 !important;
+}
+
+.error404 .grid-75,
+.error404 .tablet-grid-75 {
+	width: 100%;
+}
+
+.error404 .site-footer {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
 
 /* Other
    ========================================================================== */

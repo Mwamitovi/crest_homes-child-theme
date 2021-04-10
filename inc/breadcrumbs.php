@@ -21,7 +21,7 @@ function gpc_add_breadcrumb() {
  * Breadcrumbs function
  * @link https://www.techpulsetoday.com/wordpress-breadcrumbs-without-plugin/
  */
- function gpc_breadcrumbs() {
+function gpc_breadcrumbs() {
     
     $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
     $delimiter = '<span class="delimiter">&rtrif;</span>'; // delimiter between crumbs

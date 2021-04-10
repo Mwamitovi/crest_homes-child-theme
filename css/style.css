@@ -62,21 +62,37 @@ h5 {
 	margin-bottom: -140px;
     background-color: transparent;
     transition: 0.3s ease-in-out;
+  	box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.02), 0px 4px 5px 0px rgba(0,0,0,0.02), 0px 1px 10px 0px rgba(0,0,0,0.12); 
+}
+
+.home .site-header .inside-header {
     box-shadow: none;
+    background: transparent;
+	background: linear-gradient(to bottom, white 0%, 
+		rgba(255, 255, 255, 0.95) 19%,  
+		rgba(255, 255, 255, 0.829) 34%, 
+		rgba(255, 255, 255, 0.675) 47%,
+		rgba(255, 255, 255, 0.565) 56.5%,
+		rgba(255, 255, 255, 0.454) 65%,
+		rgba(255, 255, 255, 0.366) 73%,
+		rgba(255, 255, 255, 0.285) 80.2%,
+		rgba(255, 255, 255, 0.235) 86.1%,
+		rgba(255, 255, 255, 0.021) 91%, 
+		rgba(255, 255, 255, 0.008) 95.2%,
+		rgba(255, 255, 255, 0.002) 98.2%, transparent 100%)
+}
+
+body.woocommerce-page .site-header .inside-header {
+	background-color: #ffffff;
 }
 
 .site-header .inside-header.scroll {
     background-color: #ffffff;
+    background: #ffffff;
     padding: 8.5px 60px;
     margin-top: -1.99px;
     transition: 0.3s ease-in-out;
   	box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);      
-}
-
-
-body.woocommerce-page .site-header .inside-header {
-	background-color: #ffffff;
-  	box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.02), 0px 4px 5px 0px rgba(0,0,0,0.02), 0px 1px 10px 0px rgba(0,0,0,0.12);      
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
@@ -112,6 +128,18 @@ body.woocommerce-page .site-header .inside-header {
 .inside-header .site-logo .header-image {
 	width: 220px;
     transition: 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+	.inside-header .site-logo .header-image {
+		width: 180px;
+	}
+}
+
+@media screen and (max-width: 499px) {
+	.inside-header .site-logo .header-image {
+		width: 150px;
+	}	
 }
 
 .inside-header .site-logo .header-image.scroll {
@@ -270,7 +298,7 @@ body.woocommerce-page .site-header .inside-header {
 	margin-left: 0px !important; 
 }
 
-.about-us--section  .section-title,
+/*.about-us--section  .section-title,
 .our-homes--section .ch-gallery-title {
 	writing-mode: tb;
 	-webkit-transform: rotate(180deg);
@@ -278,7 +306,7 @@ body.woocommerce-page .site-header .inside-header {
   	-o-transform: rotate(180deg);
   	-ms-transform: rotate(180deg);
   	transform: rotate(180deg);
-}
+}*/
 
 @media screen and (max-width: 1024px) {
 	.about-us--section .section-title > h2 {
@@ -313,6 +341,12 @@ body.woocommerce-page .site-header .inside-header {
 
 .our-homes--section .woocommerce ul.products li.product a img {
 	height: fit-content;
+    transition: 0.3s ease-in-out;
+	box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.02), 0px 4px 5px 0px rgba(0,0,0,0.02), 0px 1px 10px 0px rgba(0,0,0,0.12); 
+}
+
+.our-homes--section .woocommerce ul.products li.product a img:hover {
+  	box-shadow: 0px 2px 8px -1px rgba(0,0,0,0.5), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
 }
 
 #booking-details > .gb-inside-container > .gb-grid-wrapper > .gb-grid-column {
@@ -377,13 +411,13 @@ ul.cta-message > li:nth-child(4) {
 		margin-bottom: 1em;
 	}
 
-	.our-homes--section#ch-gallery .gb-grid-wrapper > .gb-grid-column:first-child {
+/*	.our-homes--section#ch-gallery .gb-grid-wrapper > .gb-grid-column:first-child {
 		width: 12.5%;
 	}	
 
 	.our-homes--section#ch-gallery .gb-grid-wrapper > .gb-grid-column:last-child {
 		width: 87.5%;
-	}
+	}*/
 }
 
 @media screen and (max-width: 667px) {
@@ -420,7 +454,6 @@ ul.cta-message > li:nth-child(4) {
 		padding-left: 0; 
 	}
 }
-
 
 @media screen and (max-width: 768px) {
 	.contact-us--section h1.gb-headline {
@@ -535,15 +568,15 @@ ul.cta-message > li:nth-child(4) {
 	.ch-social-icons a.gb-button .gb-icon {
 		font-size: 1.5em !important;
 	}
+
+	section.ch-social-icons {
+		margin-top: -122.5px;
+	}
 }
 
 @media screen and (max-width: 499px) {
 	.ch-social-icons .gb-inside-container .gb-inside-container > .gb-grid-wrapper > .gb-grid-column:first-child {
 		display: none;
-	}
-
-	.ch-social-icons > .gb-inside-container > .gb-grid-wrapper > .gb-grid-column:first-child {
-		width: 35% !important;
 	}
 
 	.ch-social-icons .gb-inside-container .gb-inside-container > .gb-grid-wrapper {
@@ -573,10 +606,6 @@ ul.cta-message > li:nth-child(4) {
 
 	.ch-banner-title .cta-column:nth-of-type(2) {
 		margin-right: 5px !important;
-	}
-
-	.ch-social-icons > .gb-inside-container > .gb-grid-wrapper > .gb-grid-column:first-child {
-		width: 25% !important;
 	}
 
 	.contact-us--section .ch-social-icons.gb-grid-wrapper > .gb-grid-column {
@@ -634,7 +663,11 @@ ul.cta-message > li:nth-child(4) {
 .our-homes--section,
 .contact-us--section,
 .brand--section {
-	background: #ee615e1f;
+	background: #FCECEB;
+}
+
+.brand-color {
+	color: #4c1031;
 }
 
 .contact-us--section .nf-form-content .listselect-wrap .nf-field-element div,
@@ -915,3 +948,48 @@ body.error404,
 .has-drop-cap:not(:focus):first-letter {
 	font-size: 4em !important;
 }
+
+.smoky {
+	background: radial-gradient(circle at bottom left, white 0%, 
+		rgba(255, 255, 255, 0.738) 19%,  
+		rgba(255, 255, 255, 0.541) 34%, 
+		rgba(255, 255, 255, 0.382) 47%,
+		rgba(255, 255, 255, 0.278) 56.5%,
+		rgba(255, 255, 255, 0.194) 65%,
+		rgba(255, 255, 255, 0.126) 73%,
+		rgba(255, 255, 255, 0.075) 80.2%,
+		rgba(255, 255, 255, 0.042) 86.1%,
+		rgba(255, 255, 255, 0.021) 91%, 
+		rgba(255, 255, 255, 0.008) 95.2%,
+		rgba(255, 255, 255, 0.002) 98.2%, transparent 100%);
+}
+
+.smoky-reverse {
+	background: radial-gradient(circle at bottom right, white 0%, 
+		rgba(255, 255, 255, 0.738) 19%,  
+		rgba(255, 255, 255, 0.541) 34%, 
+		rgba(255, 255, 255, 0.382) 47%,
+		rgba(255, 255, 255, 0.278) 56.5%,
+		rgba(255, 255, 255, 0.194) 65%,
+		rgba(255, 255, 255, 0.126) 73%,
+		rgba(255, 255, 255, 0.075) 80.2%,
+		rgba(255, 255, 255, 0.042) 86.1%,
+		rgba(255, 255, 255, 0.021) 91%, 
+		rgba(255, 255, 255, 0.008) 95.2%,
+		rgba(255, 255, 255, 0.002) 98.2%, transparent 100%);
+}
+
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+ 	background: url('/cresthomes/wp-content/uploads/2021/04/polina.jpg') no-repeat;
+  	background-size: cover;
+  	transition: 1s opacity;
+}
+

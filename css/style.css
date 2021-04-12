@@ -12,7 +12,8 @@
  * 7. Woocommerce
  * 8. Footer
  * 9. Error page
- * 10. Other
+ * 10. Video
+ * 11. Other
  *
  */
 
@@ -80,10 +81,6 @@ h5 {
 		rgba(255, 255, 255, 0.021) 91%, 
 		rgba(255, 255, 255, 0.008) 95.2%,
 		rgba(255, 255, 255, 0.002) 98.2%, transparent 100%)
-}
-
-body.woocommerce-page .site-header .inside-header {
-	background-color: #ffffff;
 }
 
 .site-header .inside-header.scroll {
@@ -298,16 +295,6 @@ body.woocommerce-page .site-header .inside-header {
 	margin-left: 0px !important; 
 }
 
-/*.about-us--section  .section-title,
-.our-homes--section .ch-gallery-title {
-	writing-mode: tb;
-	-webkit-transform: rotate(180deg);
-  	-moz-transform: rotate(180deg);
-  	-o-transform: rotate(180deg);
-  	-ms-transform: rotate(180deg);
-  	transform: rotate(180deg);
-}*/
-
 @media screen and (max-width: 1024px) {
 	.about-us--section .section-title > h2 {
 		font-size: 60px !important;
@@ -410,14 +397,6 @@ ul.cta-message > li:nth-child(4) {
 	ul.cta-message > li {
 		margin-bottom: 1em;
 	}
-
-/*	.our-homes--section#ch-gallery .gb-grid-wrapper > .gb-grid-column:first-child {
-		width: 12.5%;
-	}	
-
-	.our-homes--section#ch-gallery .gb-grid-wrapper > .gb-grid-column:last-child {
-		width: 87.5%;
-	}*/
 }
 
 @media screen and (max-width: 667px) {
@@ -873,9 +852,26 @@ ul.cta-message > li:nth-child(4) {
 /* Woocommerce
    ========================================================================== */
 
+body.woocommerce-page .site-header .inside-header {
+	background-color: #ffffff;
+}
+
+body.woocommerce-page .container.grid-container {
+	max-width: 100%;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+body.woocommerce-page
 .product .breadcrumbs > a:nth-child(3),
 .product .breadcrumbs > span:nth-child(4) {
 	display: none;
+}
+
+.woocommerce-page.one-container .site-content {
+	padding-top: 195px !important;
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {
@@ -888,6 +884,19 @@ ul.cta-message > li:nth-child(4) {
 #order_review, #order_review_heading {
     float: none;
     width: 100%;
+}
+
+.ch-product-close {
+	padding: 100px 80px 0;
+	margin-top: 100px;
+}
+
+.ch-product-close .ch-column {
+	padding-left: 30px;
+}
+
+.ch-container > .ch-inside-container {
+	padding: 0 0 80px 10px;
 }
 
 
@@ -929,16 +938,54 @@ body.error404,
 	justify-content: center;
 }
 
+/* Video
+   ========================================================================== */
+
+
+.home video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+ 	background: url('/cresthomes/wp-content/uploads/2021/04/polina.jpg') no-repeat;
+  	background-size: cover;
+  	transition: 1s opacity;
+}
+
+.woocommerce .entry-content:not(:first-child) {
+	margin-top: 0;
+}
+
+.woocommerce div.product .product_title.custom-title,
+.woocommerce div.product .woocommerce-tabs .panel > h2 {
+	text-align: right;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel > p {
+	text-align: justify;
+}
+
+.woocommerce-page .video-wrapper {
+	height: 400px;
+	overflow: hidden;
+	margin-bottom: 1.5em;
+}
+
+.woocommerce-page .product-video {
+	width: 100%;
+	margin-top: -60px;
+	object-fit: contain;
+}
+
 /* Other
    ========================================================================== */
 
 #page {
 	margin-bottom: -62.5px;
-}
-
-.single.one-container .site-content,
-.woocommerce-page.one-container .site-content {
-	padding-top: 195px !important;
 }
 
 .page .entry-content:not(:first-child), .page .entry-summary:not(:first-child), .page .page-content:not(:first-child) {
@@ -979,17 +1026,4 @@ body.error404,
 		rgba(255, 255, 255, 0.002) 98.2%, transparent 100%);
 }
 
-video { 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
- 	background: url('/cresthomes/wp-content/uploads/2021/04/polina.jpg') no-repeat;
-  	background-size: cover;
-  	transition: 1s opacity;
-}
 

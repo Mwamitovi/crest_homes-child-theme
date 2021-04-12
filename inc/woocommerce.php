@@ -97,3 +97,42 @@ function cresth_product_title_and_video() {
   
   	};
 }
+
+/* 
+ * Remove the product tabs from Single Products (page)
+ */
+add_filter( 'woocommerce_product_tabs', '__return_empty_array', 98 );
+
+
+/* 
+ * Add a Custom "tabs" section from Single Products (page)
+ *
+ * - Removed the "<ul>" for showing tabs
+ *
+ * - Maintaned the "content", in this case, the description
+ *   And wrap it using start/end functions
+ *
+ * @hooked cresth_start_product_description - 10
+ * @hooked cresth_woo_product_description - 15
+ * @hooked cresth_end_product_description - 20
+ *
+ */
+add_action( 'woocommerce_after_single_product_summary', 'cresth_start_description', 10 );
+add_action( 'woocommerce_after_single_product_summary', 'cresth_woo_product_description', 15 );
+add_action( 'woocommerce_after_single_product_summary', 'cresth_end_description', 20 );
+
+function cresth_start_description() {
+
+	echo '<div class="woocommerce-tabs wc-tabs-wrapper customized brand-color scroll-fade-in-bottom delay-500 prep-scroll-animation"><div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab block px3">';
+}
+
+function cresth_woo_product_description() {
+	
+	wc_get_template( 'single-product/tabs/description.php' );
+}
+
+function cresth_end_description() {
+
+	echo '</div></div>';
+}
+

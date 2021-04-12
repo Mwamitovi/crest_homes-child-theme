@@ -68,3 +68,32 @@ function cresth_breadcrumbs() {
     }
 };
 
+/* 
+ * Add Custom Title and Video to the Single Products (page)
+ */
+add_action( 'woocommerce_before_single_product_summary', 'cresth_product_title_and_video' );
+function cresth_product_title_and_video() {
+	global $post;
+	
+	$video_meta = get_post_meta( $post->ID, '_product_background_video', true );
+
+	$product_title = the_title( '<h2 class="product_title entry-title custom-title brand-color fade-in-bottom prep-animation">', '</h2>' );
+
+	$product_video = $video_meta ? wp_get_attachment_url( $video_meta ) : ' ';
+
+  	// Delete this line if you want space(s) to count as not empty
+  	$var = trim($product_video);
+  
+  	if( isset($var) === true && $var !== '' ) {
+  
+      	// video is not empty
+		$show_video = sprintf(
+			'%1$s<div class="video-wrapper"><video id="video-preview" class="product-video fade-in-bottom delay-500 prep-animation" autoplay="" loop="" muted="" playsinline=""><source src="%2$s" type="video/mp4"></video></div>',
+			$product_title, // custom title
+			$product_video  // custom video
+		);
+		
+		echo $show_video;
+  
+  	};
+}

@@ -26,9 +26,19 @@ jQuery(document).ready(function( $ ){
         .home .woocommerce ul.products>li.product:nth-child(5)
     `;
 
-    // Add animation classes
-    $(firstThreeProducts).addClass('scroll-fade-in-bottom delay-750 prep-scroll-animation');
+    const singleProductView = `
+        .product .woocommerce-product-gallery,
+        .product .summary
+    `;
 
-    $(lastThreeProducts).addClass('scroll-fade-in-bottom delay-1000 prep-scroll-animation');
+    // Add animation classes
+    $(firstThreeProducts).addClass('scroll-fade-in-bottom prep-scroll-animation');
+
+    $(lastThreeProducts).addClass('scroll-fade-in-bottom delay-500 prep-scroll-animation');
+
+    // doesn't wait for scroll
+    // notice there's no "prep-animation" for it causes a bug when loading product summary
+    // the "prep-animation" remains stuck thus "visibility:hidden"
+    $(singleProductView).addClass('brand-color fade-in-bottom delay-500');
 
 });

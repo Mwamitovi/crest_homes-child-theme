@@ -115,11 +115,17 @@ add_filter( 'woocommerce_product_tabs', '__return_empty_array', 98 );
  * @hooked cresth_start_product_description - 10
  * @hooked cresth_woo_product_description - 15
  * @hooked cresth_end_product_description - 20
+ * @hooked cresth_start_close - 25
+ * @hooked cresth_product_close - 30
+ * @hooked cresth_end_close - 40
  *
  */
 add_action( 'woocommerce_after_single_product_summary', 'cresth_start_description', 10 );
 add_action( 'woocommerce_after_single_product_summary', 'cresth_woo_product_description', 15 );
 add_action( 'woocommerce_after_single_product_summary', 'cresth_end_description', 20 );
+add_action( 'woocommerce_after_single_product_summary', 'cresth_start_close', 25 );
+add_action( 'woocommerce_after_single_product_summary', 'cresth_product_close', 30 );
+add_action( 'woocommerce_after_single_product_summary', 'cresth_end_close', 40 );
 
 function cresth_start_description() {
 
@@ -136,3 +142,18 @@ function cresth_end_description() {
 	echo '</div></div>';
 }
 
+function cresth_start_close() {
+
+	echo '<section class="customized brand--section"><div class="ch-product-close"><div class="ch-column"><div class="ch-container px3 desktop-center tablet-center mobile-center scroll-fade-in-bottom prep-scroll-animation"><div class="ch-inside-container">';
+}
+
+function cresth_product_close() {
+	$closing_title = the_title( '<h2 class="has-text-align-center has-text-color brand-color">Enjoy your stay at <span style="font-weight:200">', '</span>.</h2>' );
+
+	echo $closing_title;
+}
+
+function cresth_end_close() {
+
+	echo '</div></div></section>';
+}

@@ -35,6 +35,36 @@ function gpc_remove_wc_breadcrumbs() {
 }
 
 /* 
- * Remove Categories from Single Products (description)
- */ 
+ * Remove Title and Categories from Single Products (page)
+ *
+ * - Default Woo "title" is replaced with custom title 
+ *   @See "cresth_product_title_and_video" below
+ *
+ * - Categories are simply hidden
+ *
+ */
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+/* 
+ * Add Custom breadcrumbs to the Single Products (page)
+ */
+add_action( 'woocommerce_before_main_content', 'cresth_breadcrumbs' );
+function cresth_breadcrumbs() {
+	global $post;
+
+	// var_dump($post);
+
+ 	// If we are only a single product page
+    if ( function_exists( 'is_woocommerce' ) && is_product() ) {
+    	$home_url = get_home_url();
+    	$our_homes_url = get_permalink( get_page_by_title( 'Homes' ) );
+
+    	// woo
+    	$product_title = get_the_title( $post->ID );
+
+        // return 'customized breadcrumbs';
+		echo '<nav class="customized brand-color"><a href="' . $home_url . '">Home</a>&nbsp;&gt;&nbsp;<a href="' . $our_homes_url . '">Our homes</a>&nbsp;&gt;&nbsp;' . $product_title . '</nav>';
+    }
+};
+

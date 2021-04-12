@@ -42,41 +42,6 @@ jQuery(document).ready(function( $ ){
             
             $(menuIcon).removeClass('scroll');
         };
-
-        // Define <li> element and remove class (only homepage)
-        const removeClassFromList = $(`
-            .home .inside-header .main-navigation .main-nav ul li
-        `).removeClass("current-menu-item");
-
-        // returns nth <li> element and adds class (only homepage)
-        function addClassToItem(child) {
-            return $(`
-                .home .inside-header .main-navigation .main-nav>ul>li:nth-child(${child})
-            `).addClass("current-menu-item");
-        };
-      
-        
-        if ($( this ).scrollTop() > 800 && $( this ).scrollTop() < 1600) {
-          
-            removeClassFromList;        
-            addClassToItem(2);
-          
-        } else if ($( this ).scrollTop() > 1600 && $( this ).scrollTop() < 3600) {
-          
-            removeClassFromList;
-            addClassToItem(3);
-
-        } else if ($( this ).scrollTop() > 3600) {
-              
-            removeClassFromList;
-            addClassToItem(4);
-                        
-        } else {
-
-            removeClassFromList;        
-            $('.home .inside-header .main-navigation .main-nav>ul>li:first-child')
-             .addClass("current-menu-item");
-    	};
       
     });
 

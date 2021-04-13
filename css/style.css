@@ -6,7 +6,7 @@
  * 1. Defaults
  * 2. Header and Nav
  * 3. About Us
- * 4. Our Homes
+ * 4. Our Homes ( section and page )
  * 5. Contact Us
  * 6. Widgets
  * 7. Woocommerce
@@ -81,6 +81,11 @@ h5 {
 		rgba(255, 255, 255, 0.021) 91%, 
 		rgba(255, 255, 255, 0.008) 95.2%,
 		rgba(255, 255, 255, 0.002) 98.2%, transparent 100%)
+}
+
+/* our homes page */
+.page-id-910 .site-header .inside-header {
+    background-color: #ffffff !important;
 }
 
 .site-header .inside-header.scroll {
@@ -308,8 +313,10 @@ h5 {
 }
 
 
-/* Our Homes
+/* Our Homes ( section and page )
    ========================================================================== */
+
+/* section */
 
 .our-homes--section .woocommerce .woocommerce-result-count,
 .our-homes--section .woocommerce .woocommerce-ordering {
@@ -334,11 +341,6 @@ h5 {
 
 .our-homes--section .woocommerce ul.products li.product a img:hover {
   	box-shadow: 0px 2px 8px -1px rgba(0,0,0,0.5), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
-}
-
-#booking-details > .gb-inside-container > .gb-grid-wrapper > .gb-grid-column {
-	width: 100% !important;
-	text-align: center;
 }
 
 ul.cta-message {
@@ -412,6 +414,29 @@ ul.cta-message > li:nth-child(4) {
 	}
 }
 
+/* page */
+
+.home-detail p:first-of-type {
+	margin-bottom: 0;
+}
+
+.booking-btn > .wp-block-button__link {
+  font-size: 22.5px !important;
+  font-weight: 400;
+  line-height: 1.5 !important;
+  color: #FFFFFF !important;
+  background: #4C1031FF !important;
+  border-radius: 28px;
+  padding: 8px 32px 12px !important;
+  margin-top: 1.5rem;
+}
+
+.booking-btn > .wp-block-button__link:hover,
+.booking-btn > .wp-block-button__link:focus,
+.booking-btn > .wp-block-button__link:active {
+	background: #EE615EFF !important;
+	color: #FFFFFF !important;
+}
 
 /* Contact Us
    ========================================================================== */
@@ -493,7 +518,7 @@ ul.cta-message > li:nth-child(4) {
 }
 
 .ch-banner-title .cta-column:first-of-type {
-	/* hides "Book now" button on slides */
+	/* hides "Our Homes" button on slides */
 	display: none !important;
 }
 
@@ -614,15 +639,6 @@ ul.cta-message > li:nth-child(4) {
 	font-size: 21.5px;
 }
 
-.our-homes--section .booking-form-body form .nf-before-form-content {
-	display: none;
-}
-
-.our-homes--section .booking-form-body form .booking-form-intro,
-.our-homes--section .booking-form-body form .booking-form-intro .nf-field .nf-field-element p {
-	margin-bottom: 0px;
-}
-
 .contact-us--section .nf-form-cont .nf-form-fields-required {
 	text-align: right;
 	margin-bottom: 35px;
@@ -650,54 +666,36 @@ ul.cta-message > li:nth-child(4) {
 }
 
 .contact-us--section .nf-form-content .listselect-wrap .nf-field-element div,
-.our-homes--section  .nf-form-content .listselect-wrap .nf-field-element div,
-.contact-us--section .nf-form-content .ninja-forms-field,
-.our-homes--section  .nf-form-content .ninja-forms-field {
+.contact-us--section .nf-form-content .ninja-forms-field {
 	font-size: 22.5px;
 }
 
 @media screen and (max-width: 1024px) {
 	.contact-us--section .nf-form-content .listselect-wrap .nf-field-element div,
-	.our-homes--section  .nf-form-content .listselect-wrap .nf-field-element div,
-	.contact-us--section .nf-form-content .ninja-forms-field,
-	.our-homes--section  .nf-form-content .ninja-forms-field {
+	.contact-us--section .nf-form-content .ninja-forms-field {
 		font-size: 20px;
-	}
-
-	.our-homes--section .nf-form-content .ninja-forms-field,
-	.our-homes--section .nf-form-content .listselect-wrap .nf-field-element div {
-		padding: 5px;
 	}
 }
 
-.contact-us--section .nf-form-content .list-select-wrap .nf-field-element > div, 
-.our-homes--section  .nf-form-content .list-select-wrap .nf-field-element > div, 
+.contact-us--section .nf-form-content .list-select-wrap .nf-field-element > div,
 .contact-us--section .nf-form-content input:not([type=button]), 
-.our-homes--section  .nf-form-content input:not([type=button]), 
-.contact-us--section .nf-form-content textarea,
-.our-homes--section  .nf-form-content textarea {
+.contact-us--section .nf-form-content textarea {
 	background: transparent;
 	border: none;
 	color: #4C1031FF;
 	border-bottom: 1px solid #4C1031FF;
 }
 
-.contact-us--section .nf-form-content .list-select-wrap .nf-field-element > div:focus, 
-.our-homes--section  .nf-form-content .list-select-wrap .nf-field-element > div:focus, 
+.contact-us--section .nf-form-content .list-select-wrap .nf-field-element > div:focus,
 .contact-us--section .nf-form-content input:not([type=button]):focus, 
-.our-homes--section  .nf-form-content input:not([type=button]):focus, 
-.contact-us--section .nf-form-content textarea:focus,
-.our-homes--section  .nf-form-content textarea:focus {
+.contact-us--section .nf-form-content textarea:focus {
 	background: transparent;
 }
 
 @media screen and (max-width: 767px) {
-	.contact-us--section .nf-form-content .list-select-wrap .nf-field-element > div, 
-	.our-homes--section  .nf-form-content .list-select-wrap .nf-field-element > div, 
+	.contact-us--section .nf-form-content .list-select-wrap .nf-field-element > div,
 	.contact-us--section .nf-form-content input:not([type=button]), 
-	.our-homes--section  .nf-form-content input:not([type=button]), 
-	.contact-us--section .nf-form-content textarea,
-	.our-homes--section  .nf-form-content textarea {
+	.contact-us--section .nf-form-content textarea {
 		text-align: center;
 	}	
 }
@@ -706,93 +704,16 @@ ul.cta-message > li:nth-child(4) {
 	height: 50px;
 }
 
-.our-homes--section  .nf-form-content textarea.ninja-forms-field {
-	height: 50px;
-}
-
 .contact-us--section .nf-form-content nf-field:not(:first-child) > .nf-field-container {
 	margin-top: 60px;
 }
 
-.our-homes--section  .nf-form-content nf-field:first-child > .nf-field-container {
-	margin-top: 0px;
-}
-
-.our-homes--section  .nf-form-content nf-field:not(:first-child) > .nf-field-container {
-	margin-top: 35px;
-}
-
-.our-homes--section  .nf-form-content .listselect-wrap .nf-field-element div,
-.our-homes--section  .nf-form-content input.ninja-forms-field, 
-.our-homes--section  .nf-form-content select.ninja-forms-field:not([multiple]) {
-	height: 53.5px;
-}
-
-@media screen and (max-width: 767px) {
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6),
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(7) {
-		display: inline-flex;
-	}	
-
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6) {
-		width: 70%;
-	}
-
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6) .one-half {
-		width: 90%;
-	}
-
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(7) {
-		width: 30%;
-	}
-
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6) .nf-field-container .nf-field-description,
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(7) .nf-field-container .nf-field-description {
-		text-align: left;
-	}
-}
-
-@media screen and (max-width: 667px) {
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6) {
-		width: 60%;
-	}
-
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(7) {
-		width: 40%;
-	}
-}
-
-@media screen and (max-width: 499px) {
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6),
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(7) {
-		display: unset;
-	}	
-
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6) .one-half {
-		width: unset;
-	}
-
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(6) .nf-field-container .nf-field-description,
-	.our-homes--section .nf-form-content > nf-fields-wrap > nf-field:nth-child(7) .nf-field-container .nf-field-description {
-		text-align: unset;
-	}
-}
-
 .contact-us--section .nf-form-content button, 
-.our-homes--section  .nf-form-content button, 
 .contact-us--section .nf-form-content input[type=button], 
-.our-homes--section  .nf-form-content input[type=button], 
-.contact-us--section .nf-form-content input[type=submit],
-.our-homes--section  .nf-form-content input[type=submit] {
+.contact-us--section .nf-form-content input[type=submit] {
 	background: #4C1031FF;
 	padding: 8px 32px 12px;
 	border-radius: 28px;
-}
-
-.our-homes--section  .nf-form-content button, 
-.our-homes--section  .nf-form-content input[type=button], 
-.our-homes--section  .nf-form-content input[type=submit] {
-	margin-top: 27px;
 }
 
 .contact-us--section .nf-form-content button:hover,
@@ -803,41 +724,28 @@ ul.cta-message > li:nth-child(4) {
 .contact-us--section .nf-form-content input[type=button]:active, 
 .contact-us--section .nf-form-content input[type=submit]:hover,
 .contact-us--section .nf-form-content input[type=submit]:focus,
-.contact-us--section .nf-form-content input[type=submit]:active,
-.our-homes--section  .nf-form-content button:hover,
-.our-homes--section  .nf-form-content button:focus,
-.our-homes--section  .nf-form-content button:active,
-.our-homes--section  .nf-form-content input[type=button]:hover,
-.our-homes--section  .nf-form-content input[type=button]:focus,
-.our-homes--section  .nf-form-content input[type=button]:active,
-.our-homes--section  .nf-form-content input[type=submit]:hover,
-.our-homes--section  .nf-form-content input[type=submit]:focus,
-.our-homes--section  .nf-form-content input[type=submit]:active {
+.contact-us--section .nf-form-content input[type=submit]:active {
 	background: #EE615EFF;
 	color: #FFFFFF;
 }
 
-.contact-us--section .nf-form-content .nf-after-field .nf-error .nf-error-msg,
-.our-homes--section  .nf-form-content .nf-after-field .nf-error .nf-error-msg {
+.contact-us--section .nf-form-content .nf-after-field .nf-error .nf-error-msg {
 	margin-bottom: -32px;
 }
 
 @media screen and (max-width: 1024px) {
-	.contact-us--section .nf-form-content .nf-after-field .nf-error .nf-error-msg,
-	.our-homes--section  .nf-form-content .nf-after-field .nf-error .nf-error-msg {
+	.contact-us--section .nf-form-content .nf-after-field .nf-error .nf-error-msg {
 		font-size: 14.5px;
 	}
 }
 
-.contact-us--section .nf-after-form-content .nf-form-errors .nf-error-msg,
-.our-homes--section  .nf-after-form-content .nf-form-errors .nf-error-msg {
+.contact-us--section .nf-after-form-content .nf-form-errors .nf-error-msg {
 	margin-left: 6px;
 	margin-top: -18px;
 }
 
 @media screen and (max-width: 1024px) {
-	.contact-us--section .nf-error.field-wrap .nf-field-element:after,
-	.our-homes--section  .nf-error.field-wrap .nf-field-element:after {
+	.contact-us--section .nf-error.field-wrap .nf-field-element:after {
 		height: 40px;
 		width: 40px;
 		line-height: 45px;
@@ -907,6 +815,10 @@ body.woocommerce-page
 	color: #4C1031;
 	font-weight: 500;
 	background-color: transparent;
+}
+
+.customized.site-info {
+	padding: 17.5px;
 }
 
 

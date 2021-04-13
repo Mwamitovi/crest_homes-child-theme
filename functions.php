@@ -106,6 +106,7 @@ require get_stylesheet_directory() . '/inc/sub-menu-widget.php';
 require get_stylesheet_directory() . '/inc/optimizations.php';
 require get_stylesheet_directory() . '/inc/image-sizes.php';
 require get_stylesheet_directory() . '/inc/woocommerce.php';
+require get_stylesheet_directory() . '/inc/pop-ups.php';
 // require get_stylesheet_directory() . '/inc/fonts.php';
 // require get_stylesheet_directory() . '/inc/breadcrumbs.php';
 // require get_stylesheet_directory() . '/inc/wp-show-posts.php';

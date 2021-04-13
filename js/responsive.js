@@ -41,4 +41,7 @@ jQuery(document).ready(function( $ ){
     // the "prep-animation" remains stuck thus "visibility:hidden"
     $(singleProductView).addClass('brand-color fade-in-bottom delay-500');
 
+    // Add `data-lity` attribute to trigger lightbox pop-ups
+    $('.pop-up-link .wp-block-image > a').attr('data-lity', '');
+
 });

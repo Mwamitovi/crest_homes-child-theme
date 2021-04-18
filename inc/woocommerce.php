@@ -25,7 +25,7 @@ function gpc_woo_sidebar( $layout ) {
         return 'no-sidebar';
     }
 
-    if ( function_exists( 'is_woocommerce' ) && (is_cart() || is_checkout()) ) {
+    if ( function_exists( 'is_woocommerce' ) && (is_cart() || is_checkout() || is_account_page()) ) {
         return 'no-sidebar';
     }
 

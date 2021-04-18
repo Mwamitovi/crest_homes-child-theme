@@ -10,10 +10,11 @@
  * 5. Contact Us
  * 6. Widgets
  * 7. Woocommerce
- * 8. Footer
- * 9. Error page
- * 10. Video
- * 11. Other
+ * 8. Privacy policy
+ * 9. Footer
+ * 10. Error page
+ * 11. Video
+ * 12. Other
  *
  */
 
@@ -809,6 +810,7 @@ body.woocommerce-page
 	font-size: 22.5px;
     font-weight: 600;
     line-height: 1.5;
+    color: #ffffff !important;
 	background: #4c1031 !important;
     padding: 8px 32px 12px;
     margin-top: 1.5rem;
@@ -844,6 +846,7 @@ body.woocommerce-page
 .woocommerce-error, 
 .woocommerce-info, 
 .woocommerce-message {
+	margin: 5px 0 0;
     border-top-color: #ee625f !important;
 }
 
@@ -857,7 +860,9 @@ body.woocommerce-page
 	border-top: unset;
 }
 
-.woocommerce-error::before {
+.woocommerce-error::before,
+.woocommerce-info::before,
+.woocommerce-message::before {
 	color: #ee625f !important;
 }
 
@@ -904,6 +909,17 @@ body.woocommerce-page
 
 .ch-container > .ch-inside-container {
 	padding: 0 0 80px 10px;
+}
+
+
+/* Privacy Policy
+   ========================================================================== */
+
+.privacy-policy.one-container .site-content {
+	color: #4c1031;
+	padding-top: 195px !important;
+	padding-left: 90px !important;
+	padding-right: 90px !important;
 }
 
 

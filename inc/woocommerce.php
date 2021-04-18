@@ -251,3 +251,40 @@ function cresth_override_checkout_fields( $fields ) {
 	return $fields;
 }
 
+
+/* Cart Page */
+
+
+/**
+ * Customize the "shop page" link
+ *
+ * - Crest homes has no "shop page", we use "Homes page" for that purpose
+ *
+ */
+add_filter( 'woocommerce_get_shop_page_permalink', 'cresth_get_shop_page_permalink' );
+function cresth_get_shop_page_permalink( $link ) {
+	// our-homes page
+	$our_homes_url = get_permalink( get_page_by_title( 'Homes' ) );
+	$link = $our_homes_url;
+
+	return $link;
+}
+
+/**
+ * Customize the "text/messages"
+ *
+ */
+add_filter( 'gettext', 'change_woo_return_to_shop_text', 20, 3 );
+function change_woo_return_to_shop_text( $translated_text, $text, $domain ) {
+
+    switch ( $translated_text ) {
+        case 'Your cart is currently empty.' :
+            $translated_text = __( 'Sorry, you have no booking yet.', 'woocommerce' );
+            break;
+        case 'Return to shop' :
+            $translated_text = __( 'Return to homes', 'woocommerce' );
+            break;
+    }
+
+    return $translated_text;
+}

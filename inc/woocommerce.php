@@ -2,14 +2,21 @@
 /**
  * Woocommerce stuff.
  *
+ * - Single Product Page
+ * - Checkout Page
+ *
  * @package GenerateChild
  * @link https://woocommerce.com/
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+
+/* Single Product Page */
+
+
 /**
- * Remove sidebar from single-product page.
+ * Remove sidebar.
  */
 add_filter( 'generate_sidebar_layout', 'gpc_woo_sidebar' );
 function gpc_woo_sidebar( $layout ) {
@@ -26,8 +33,18 @@ function gpc_woo_sidebar( $layout ) {
     return $layout;
 }
 
+/* 
+ * Remove the product tabs.
+ */
+add_filter( 'woocommerce_product_tabs', '__return_empty_array', 98 );
+
 /**
- * Remove the breadcrumbs 
+* Remove related products output
+*/
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+/**
+ * Remove the breadcrumbs.
  */
 add_action( 'init', 'gpc_remove_wc_breadcrumbs' );
 function gpc_remove_wc_breadcrumbs() {
@@ -35,7 +52,29 @@ function gpc_remove_wc_breadcrumbs() {
 }
 
 /* 
- * Remove Title and Categories from Single Products (page)
+ * Add Custom breadcrumbs.
+ */
+add_action( 'woocommerce_before_main_content', 'cresth_breadcrumbs' );
+function cresth_breadcrumbs() {
+	global $post;
+
+	// var_dump($post);
+
+ 	// If we are only a single product page
+    if ( function_exists( 'is_woocommerce' ) && is_product() ) {
+    	$home_url = get_home_url();
+    	$our_homes_url = get_permalink( get_page_by_title( 'Homes' ) ); // our-homes page
+
+    	// woo
+    	$product_title = get_the_title( $post->ID );
+
+        // return 'customized breadcrumbs';
+		echo '<nav class="customized brand-color"><a href="' . $home_url . '">Home</a>&nbsp;&gt;&nbsp;<a href="' . $our_homes_url . '">Our homes</a>&nbsp;&gt;&nbsp;' . $product_title . '</nav>';
+    }
+};
+
+/* 
+ * Remove Title and Categories.
  *
  * - Default Woo "title" is replaced with custom title 
  *   @See "cresth_product_title_and_video" below
@@ -47,29 +86,7 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
 /* 
- * Add Custom breadcrumbs to the Single Products (page)
- */
-add_action( 'woocommerce_before_main_content', 'cresth_breadcrumbs' );
-function cresth_breadcrumbs() {
-	global $post;
-
-	// var_dump($post);
-
- 	// If we are only a single product page
-    if ( function_exists( 'is_woocommerce' ) && is_product() ) {
-    	$home_url = get_home_url();
-    	$our_homes_url = get_permalink( get_page_by_title( 'Homes' ) );
-
-    	// woo
-    	$product_title = get_the_title( $post->ID );
-
-        // return 'customized breadcrumbs';
-		echo '<nav class="customized brand-color"><a href="' . $home_url . '">Home</a>&nbsp;&gt;&nbsp;<a href="' . $our_homes_url . '">Our homes</a>&nbsp;&gt;&nbsp;' . $product_title . '</nav>';
-    }
-};
-
-/* 
- * Add Custom Title and Video to the Single Products (page)
+ * Add Custom Title and Video.
  */
 add_action( 'woocommerce_before_single_product_summary', 'cresth_product_title_and_video' );
 function cresth_product_title_and_video() {
@@ -79,7 +96,8 @@ function cresth_product_title_and_video() {
 
 	$product_title = the_title( '<h2 class="product_title entry-title custom-title brand-color fade-in-bottom prep-animation">', '</h2>' );
 
-	$product_video = $video_meta ? wp_get_attachment_url( $video_meta ) : ' ';
+	// $product_video = $video_meta ? wp_get_attachment_url( $video_meta ) : ' ';
+	$product_video = ' ';
 
   	// Delete this line if you want space(s) to count as not empty
   	$var = trim($product_video);
@@ -98,14 +116,9 @@ function cresth_product_title_and_video() {
   	};
 }
 
-/* 
- * Remove the product tabs from Single Products (page)
- */
-add_filter( 'woocommerce_product_tabs', '__return_empty_array', 98 );
-
 
 /* 
- * Add a Custom "tabs" section from Single Products (page)
+ * Add a Custom "tabs" section.
  *
  * - Removed the "<ul>" for showing tabs
  *
@@ -157,3 +170,84 @@ function cresth_end_close() {
 
 	echo '</div></div></section>';
 }
+
+
+/* Checkout Page */
+
+
+/**
+* Customize the "billing" fields
+*/
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+function custom_override_checkout_fields( $fields ) {
+
+	/* Remove some fields */
+
+	unset($fields['billing']['billing_address_2']); // apartment/suite
+	unset($fields['billing']['billing_city']); 		// town/village
+	unset($fields['billing']['billing_state']); 	// District
+
+	/* Shift the fields */
+
+	$order = array(
+	    "billing_first_name",
+	    "billing_last_name",
+	    "billing_phone",
+	    "billing_email",
+	    "billing_company",
+	    "billing_address_1",
+	    "billing_country",
+	);
+
+	foreach( $order as $field ) {
+		$ordered_fields[$field] = $fields["billing"][$field];
+  	};
+
+	$fields['billing'] = $ordered_fields;
+
+	$fields['billing']['billing_first_name']['priority'] 	= 10;
+	$fields['billing']['billing_last_name']['priority'] 	= 20;
+	$fields['billing']['billing_phone']['priority'] 		= 30;
+	$fields['billing']['billing_email']['priority'] 		= 40;
+	$fields['billing']['billing_company']['priority'] 		= 50;
+	$fields['billing']['billing_address_1']['priority'] 	= 60;
+	$fields['billing']['billing_country']['priority'] 		= 70;
+
+	/* Customize labels */
+
+	$fields['billing']['billing_phone']['label'] 	= 'Pnone no.';
+	$fields['billing']['billing_country']['label'] 	= 'Nationality / Country';	
+
+	return $fields;
+}
+
+/**
+* Customize the "address" field; uses special filter
+*/
+add_filter( 'woocommerce_default_address_fields' , 'cresth_custom_address_field' );
+function cresth_custom_address_field( $fields ) {	
+	$fields['address_1']['placeholder'] = '';
+
+	return $fields;	
+}
+
+/**
+* Customize the "Place order" text
+*/
+add_filter( 'woocommerce_order_button_text', 'cresth_custom_order_button_text' ); 
+function cresth_custom_order_button_text() {
+    return __( 'Pay now', 'woocommerce' ); 
+}
+
+/**
+* Customize the "checkout" field
+*/
+add_filter( 'woocommerce_checkout_fields' , 'cresth_override_checkout_fields' );
+function cresth_override_checkout_fields( $fields ) {
+
+	$fields['order']['order_comments']['label'] 		= 'Booking notes';
+	$fields['order']['order_comments']['placeholder'] 	= 'Notes about your booking, e.g. special notes for my check-in.';
+
+	return $fields;
+}
+

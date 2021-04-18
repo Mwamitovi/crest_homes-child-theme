@@ -37,7 +37,7 @@ jQuery(document).ready(function( $ ){
     $(lastThreeProducts).addClass('scroll-fade-in-bottom delay-500 prep-scroll-animation');
 
     // doesn't wait for scroll
-    // notice there's no "prep-animation" for it causes a bug when loading product summary
+    // note that there's no "prep-animation" for it causes a bug when loading product summary
     // the "prep-animation" remains stuck thus "visibility:hidden"
     $(singleProductView).addClass('brand-color fade-in-bottom delay-500');
 

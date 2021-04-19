@@ -30,6 +30,12 @@ body.page .breadcrumbs {
 	display: none;
 }
 
+@media screen and (max-width: 768px) {
+	h2 {
+		font-size: 40px !important;
+	}
+}
+
 h4 {
 	font-size: 32px;
 	font-weight: 400;
@@ -51,6 +57,13 @@ h5 {
 
 .ch-social-icons.scroll {
 	z-index: 0;
+}
+
+@media screen and (max-width: 499px) {
+	section[class*='gb-container-'] > .gb-inside-container {
+		padding-left: 45px !important;
+		padding-right: 45px !important;
+	}
 }
 
 

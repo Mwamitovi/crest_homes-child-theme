@@ -44,4 +44,8 @@ jQuery(document).ready(function( $ ){
     // Add `data-lity` attribute to trigger lightbox pop-ups
     $('.pop-up-link .wp-block-image > a').attr('data-lity', '');
 
+    // About-us page
+    $(".mobile-flex .gb-grid-wrapper>.gb-grid-column:first-child").addClass('order-1');
+    $(".mobile-flex .gb-grid-wrapper>.gb-grid-column:last-child").addClass('order-0');
+
 });

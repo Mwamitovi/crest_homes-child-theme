@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?6f6cce76a57534f7536660f638b41af8") format("truetype"),
+url("./flaticon.woff?6f6cce76a57534f7536660f638b41af8") format("woff"),
+url("./flaticon.woff2?6f6cce76a57534f7536660f638b41af8") format("woff2"),
+url("./flaticon.eot?6f6cce76a57534f7536660f638b41af8#iefix") format("embedded-opentype"),
+url("./flaticon.svg?6f6cce76a57534f7536660f638b41af8#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-air-conditioner:before {
+    content: "\f101";
+}
+.flaticon-dumbbell:before {
+    content: "\f102";
+}
+.flaticon-housekeeping:before {
+    content: "\f103";
+}
+.flaticon-kitchen:before {
+    content: "\f104";
+}
+.flaticon-mall:before {
+    content: "\f105";
+}
+.flaticon-pantry:before {
+    content: "\f106";
+}
+.flaticon-parking:before {
+    content: "\f107";
+}
+.flaticon-smart-tv:before {
+    content: "\f108";
+}
+.flaticon-swimmer:before {
+    content: "\f109";
+}
+.flaticon-verified:before {
+    content: "\f10a";
+}
+.flaticon-washing-machine:before {
+    content: "\f10b";
+}
+.flaticon-water-heater:before {
+    content: "\f10c";
+}
+.flaticon-wifi:before {
+    content: "\f10d";
+}
+.flaticon {
+    font-size: 5em;
+}

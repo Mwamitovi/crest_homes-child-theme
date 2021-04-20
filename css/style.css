@@ -66,6 +66,19 @@ h5 {
 	}
 }
 
+.flaticon+.title {
+	margin-top: -29px;
+	font-size: 38px;
+}
+
+.font-license p {
+	color: #f4f4f4;
+}
+
+.font-license p > a {
+	color: #eff3f7;
+}
+
 
 /* Header & Nav
    ========================================================================== */

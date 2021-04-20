@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * Show all the Google fonts.
  * @link https://docs.generatepress.com/article/customizing-the-google-font-list/
  */
-add_filter( 'generate_number_of_fonts', 'gp_adjust_google_fonts_list' );
+// add_filter( 'generate_number_of_fonts', 'gp_adjust_google_fonts_list' );
 function gp_adjust_google_fonts_list() {
     return 'all'; // set to 'all' or a number
 }

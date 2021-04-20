@@ -91,6 +91,32 @@ function gpc_cresth_footer() {
 	echo $copyright;
 }
 
+
+/**
+ * Update footer message
+ */
+// add_filter( 'generate_before_content','ch_get_product_prices' );
+function ch_get_product_prices() {
+   $all_ids = get_posts( array(
+      'post_type' => 'product',
+      'numberposts' => -1,
+      'post_status' => 'publish',
+      'fields' => 'ids',
+      // 'tax_query' => array(
+      //    array(
+      //       'taxonomy' => 'product_cat',
+      //       'field' => 'slug',
+      //       'terms' => 'your_product_cat',
+      //       'operator' => 'IN',
+      //    )
+      // ),
+   ) );
+   foreach ( $all_ids as $id ) {
+      echo $id;
+      var_dump($id);
+   }
+}
+
 /**
  * Include other functions as needed from the `inc` folder.
  */
